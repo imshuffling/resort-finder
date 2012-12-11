@@ -88,8 +88,24 @@ require_once 'include/functions.php';
                             <li><a href="#tabs-3">Destinations</a></li>
                         </ul>
                         <div id="tabs-1">
-                            <p><strong>Click this tab again to close the content pane.</strong></p>
-                            <p>Proin elit arcu, rutrum commodo, vehicula tempus, commodo a, risus. Curabitur nec arcu. Donec sollicitudin mi sit amet mauris. Nam elementum quam ullamcorper ante. Etiam aliquet massa et lorem. Mauris dapibus lacus auctor risus. Aenean tempor ullamcorper leo. Vivamus sed magna quis ligula eleifend adipiscing. Duis orci. Aliquam sodales tortor vitae ipsum. Aliquam nulla. Duis aliquam molestie erat. Ut et mauris vel pede varius sollicitudin. Sed ut dolor nec orci tincidunt interdum. Phasellus ipsum. Nunc tristique tempus lectus.</p>
+                        
+                                                <div class="filters">
+                        	<div class="filter">
+                                <span>Resort</span>
+                                <ul>
+                                    <?php						
+                                    $sql = "SELECT resort_type, resort_type_field   
+                                            FROM resorttypes
+                                            ORDER BY order_id";
+                                    $resort_list = getList("AND", $sql, 'resort_type', 'resorts', 'resort_type_field');
+                                    echo $resort_list;
+                                    ?>
+                                </ul>
+                            </div>
+                        </div>
+
+
+						
                         </div>
                         <div id="tabs-2">
                             <p><strong>Click this tab again to close the content pane.</strong></p>
