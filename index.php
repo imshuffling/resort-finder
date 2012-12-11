@@ -11,12 +11,30 @@ require_once 'include/functions.php';
 	<title>Crystal Ski Destinations</title>
 	<meta name="description" content="" />
 	<link rel="stylesheet" type="text/css" href="css/main.css" media="screen"/>
+	<link rel="stylesheet" type="text/css" href="css/ui-lightness/jquery-ui-1.9.2.custom.css"/>
     		
 	<meta name="expires" content="never" />
   	<meta name="robots" content="index,follow,noydir,noodp" />
 
 	<script src="js/jquery.1.7.2.min.js"></script>
+	<script src="js/jquery-ui-1.9.2.custom.js"></script>
 	<script language="javascript" type="text/javascript" src="js/jquery.tablesorter.js"></script>
+	
+	<script>
+    $(function() {
+        $( "#slider" ).slider({
+            value:100,
+            min: 0,
+            max: 900,
+            step: 100,
+            slide: function( event, ui ) {
+                $( "#amount" ).val( "$" + ui.value );
+            }
+        });
+        $( "#amount" ).val( "$" + $( "#slider" ).slider( "value" ) );
+    });
+    </script>
+	
 </head>
 
 <body id="browser">
@@ -60,9 +78,21 @@ require_once 'include/functions.php';
             
         </div> <!-- End header -->
       
-        <div id="content-body">
-        
+        <div id="content-body">       
             <div id="main">
+			
+			
+		<div style="width:400px;" id="sliderGroupSize">
+		    <div id="slide-container">        
+		        <div id="slider" class="ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-handle"><a href="#" class="ui-slider-handle ui-state-default ui-corner-handle" style="left: 0%;"></a></div>
+                    <ul style="overflow: auto; padding: 0px; margin: 0px; list-style-type: none;">
+                        <li style="width:10%; text-align:center; float: left;white-space: nowrap;">Any</li><li style="width:10%; text-align:center; float: left;white-space: nowrap;">1</li><li style="width:10%; text-align:center; float: left;white-space: nowrap;">2</li><li style="width:10%; text-align:center; float: left;white-space: nowrap;">3</li><li style="width:10%; text-align:center; float: left;white-space: nowrap;">4</li><li style="width:10%; text-align:center; float: left;white-space: nowrap;">5</li><li style="width:10%; text-align:center; float: left;white-space: nowrap;">6</li><li style="width:10%; text-align:center; float: left;white-space: nowrap;">7</li><li style="width:10%; text-align:center; float: left;white-space: nowrap;">8</li><li style="width:10%; text-align:center; float: left;white-space: nowrap;">9+</li>
+                    </ul>
+		    </div>		
+        </div>
+			
+			
+			
 
                 <form action="">
                 <div id="offers">
