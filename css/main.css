@@ -1,0 +1,510 @@
+@charset "utf-8";
+/********************************** 
+	TUI SKI
+**********************************/
+
+*
+{
+	margin: 0px auto 0px auto;
+	bottom: 0;
+}
+
+body
+{
+	font: 1em Tahoma, Arial, Helvetica, sans-serif;
+	/*line-height: 1.6em;*/ 
+	font-style: normal; 
+	color: #010000;
+	background: #efefef;
+}
+
+a img
+{
+	border: none;
+	background: none;
+}
+
+a
+{
+	color: #333;
+	text-decoration: none;
+}
+
+a:hover
+{
+	color: #ee1d25;
+}
+
+#wrapper
+{
+	margin: 0px auto 0px auto;
+	bottom: 0;
+	width: 962px;
+	height: auto;
+	margin-top: 10px;
+}
+
+/**** Header ****/
+#header
+{
+	width: 900px;
+	padding: 43px 31px 0 31px;
+	float: left;
+	background: url(../images/wrapper-top_03.jpg) top no-repeat #fff;
+}
+
+#logo
+{
+	width: 900px;
+	height: 25px;
+	float: left;
+	margin-bottom: 21px;
+}
+
+/*-- Navigation menu --*/
+#navigation
+{
+	width: 740px;
+	height: 28px;
+	float: left;
+	font-size: 90%;
+	font-weight: bold;
+	letter-spacing: 0.3px;
+}
+
+#navigation ul
+{
+	padding: 0;
+}
+
+#navigation ul, #navigation li
+{
+	float: left;
+	height: 28px;
+	list-style-type: none;
+}
+
+#navigation li
+{
+	float: left;
+	margin-right: 13px;
+}
+
+#nav li a
+{
+	color: #333;
+	padding: 5px 13px 7px 13px;
+	font-weight: bold;
+	text-align: center;
+	float: left;
+	text-decoration: none;
+	background: none;
+	position: relative;
+}
+
+#nav li a:hover
+{
+	color: #ee1d25;
+	display: block;
+	background: url(../images/header_12.jpg) repeat-x;
+}
+
+#nav li.current_nav_item a
+{
+	color: #ee1d25;
+	display: block;
+	background: url(../images/header_12.jpg) repeat-x;
+}
+
+.nav-item-bg-l, .nav-item-bg-r
+{
+	position: absolute;
+	height: 28px;
+	width: 4px;
+	display: none;
+	top: 0px;
+}
+
+.nav-item-bg-l
+{
+	background: url(../images/header_11.jpg) no-repeat;
+	left: 0px;
+}
+
+.nav-item-bg-r
+{
+	background: url(../images/header_13.jpg) no-repeat;
+	right: 0px;
+}
+
+#nav a:hover .nav-item-bg-l
+{
+	display: block;
+}
+
+#nav a:hover .nav-item-bg-r
+{
+	display: block;
+}
+
+#nav li.current_nav_item .nav-item-bg-l
+{
+	display: block;
+}
+
+#nav li.current_nav_item .nav-item-bg-r
+{
+	display: block;
+}
+
+
+
+#breadcrumb
+{
+	margin: 16px 0 22px 0;
+	width: 900px;
+	height: 13px;
+	font-size: 65%;
+	color: #999;
+	float: left;
+}
+
+#breadcrumb a
+{
+	color: #0750a4;
+	text-decoration: underline;
+}
+
+/**** Content ****/
+#content-body
+{
+	margin:0;
+	padding: 0 25px 25px 25px;
+	background: url(../images/content-bg_34.jpg) repeat-y #fff;
+	float: left;
+}
+
+#main
+{
+	width: 687px;
+	float: left;
+}
+
+#photo-viewer
+{
+	margin-top: 18px;
+}
+
+#photo-main
+{
+	position: relative;
+}
+
+
+
+
+
+/**** Offers and Deals ****/
+#offers
+{
+	position: relative;
+	font-size: 80%;
+	width: 655px;
+	padding: 30px 5px 0 5px;
+	background: url(../images/offers-top-bg_30.jpg) no-repeat top;
+	float: left;
+}
+
+h1, h2{
+	position: absolute;
+	top: -13px;
+	left: 20px;
+	float: left;
+	color: #fff;
+	background-color: #626262;
+	padding: 8px 7px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+	height: 18px;
+	display: block;
+	font-weight: bold;
+	font-size: 1.2em;
+}
+
+
+
+.red
+{
+	color: #ed1d24;
+}
+
+#intro-title{
+	font-weight: bold;
+	float: left;
+	width: 100%;
+}
+
+#intro-copy{
+	font-size: 90%;
+	float: left;
+}
+
+/**** Packages Offers List ****/
+.list-tiny
+{
+	font-size: 90%;
+}
+
+.list-large
+{
+	font-size: 120%;
+	font-weight: bold;
+}
+
+#packages
+{
+	font-size: 70%;
+	width: 653px;
+	padding: 0;
+	margin:0 5px;
+	float: left;
+	border: 1px solid #dfddde;
+	border-top: none;
+}
+
+#package-list
+{
+	width: 653px;
+	text-align: left;
+	border-collapse: collapse;
+	
+}
+
+#package-list a
+{
+	color: #0750a4;
+	text-decoration: underline;
+}
+
+#package-list th
+{
+	text-align: left;
+}
+
+#package-list tr
+{
+	border-bottom: 2px solid #fff;
+}
+
+#package-list tbody tr
+{
+	background-color: #f5f5f5;
+	height: 40px;
+}
+
+#package-list td, #package-list th
+{
+	padding-left: 10px;
+}
+
+#package-list tr.active
+{ 
+	background-color: #d2e1e9;
+	cursor: pointer;
+}
+
+#package-list tbody tr td .list-arrow, #package-list tbody tr.active td .list-arrow
+{
+	width: 12px;
+	height: 13px;
+	display: block;
+}
+
+#package-list tbody tr td .list-arrow
+{
+	background: url(../images/list-arrow-black.png) no-repeat;
+}
+
+#package-list tbody tr.active td .list-arrow
+{
+	background: url(../images/list-arrow-red.png) no-repeat;
+}
+
+/**** Sidebar ****/
+#sidebar{
+	width: 185px;	
+	float: left;
+	padding: 15px 20px;
+	background: url(../images/sidebar_bg_29.jpg) top no-repeat #eee;
+}
+
+.sidebar-title{
+	font-weight: bold;
+	font-size: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/**************************/
+ul, li{
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+input{
+	margin-right: 5px;
+}
+
+#offers-intro{
+	width: 655px;
+	float: left;
+}
+
+#filter-holder{
+	width:623px;
+	float: left;
+	position: relative;
+	background-color: #f3f1f2;
+	padding:15px;
+	border: 1px solid #e1ddde;
+	-webkit-border-radius: 6px 6px 0px 0px;
+	border-radius: 6px 6px 0px 0px; 
+}
+
+#showHideFilters{
+	width:623px;
+	display: inline-block;
+}
+
+#showHideFilters a{
+	font-weight: bold;
+	float: right;
+	padding-right: 20px;
+	text-decoration: underline;
+	margin-top: 20px;
+	background: url(../images/down.png) no-repeat right 50%;
+}
+
+#showHideFilters a.close{
+	background: url(../images/up.png) no-repeat right 50%;
+}
+
+#destinationCount{
+	float: left;
+	width:623px;
+    height: 20px;
+ 	border: 1px solid #e1ddde;
+	border-top: none;
+	padding: 10px 15px;
+}
+
+#destinationCount #resortCount{
+	float: left;
+	font-size: 1.2em;
+    font-weight: bold;
+}
+
+#destinationCount #resortCount span{
+	color: #7e7276;
+}
+
+#destinationCount #clearFilters{
+	float: right;
+	font-weight: bold;
+}
+#destinationCount #clearFilters a{
+	float: right;
+	font-weight: bold;
+	text-decoration: underline;
+}
+
+#package-list thead tr{
+	background-color: #e2e2e2;
+}
+
+.filters{
+	width: 124px;
+	float: left;
+}
+
+.filters span{
+	font-weight: bold;
+	display: block;
+    margin: 10px 0 5px 0;
+}
+
+.filters ul li {
+	position: relative;
+	padding: 3px 0;
+}
+
+.filters ul li span.itemName {
+	display: inline-block;
+    font-weight: normal;
+	padding: 0 0 0 18px;
+	margin: 0;
+	max-width:100px;
+	/*word-wrap:break-word;*/
+}
+
+.filters ul li span.itemName span.itemCount {
+    color: #a9a9a9;
+    display: inline-block;
+    font-size: 0.857em;
+	font-weight:normal;
+	margin: 0;
+	padding: 0 0 0 0;
+	position: relative;
+	top: -1px;
+}
+
+.filters ul li input{
+	position: absolute;
+	top: 5px;
+}
+
+#package-list th {
+	padding: 10px;
+}
+#package-list th:hover {
+	cursor: pointer;
+}
+
+.hide
+{
+	display:none;
+}
