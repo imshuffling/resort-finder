@@ -51,7 +51,7 @@ function getList($logic, $sql, $field, $checkBoxType, $destinations_field="", $c
 		/*************************************************************************************************/
 		
 		if($counter > 2){
-			$isHidden = " hide";
+			//$isHidden = " hide";
 		}else{
 			$isHidden = "";
 		}

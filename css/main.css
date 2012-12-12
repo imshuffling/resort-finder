@@ -263,7 +263,6 @@ h1, h2{
 
 #packages
 {
-	font-size: 70%;
 	width: 653px;
 	padding: 0;
 	margin:0 5px;
@@ -272,60 +271,61 @@ h1, h2{
 	border-top: none;
 }
 
-#package-list
+.package-list
 {
 	width: 653px;
+	font-size: 70%;
 	text-align: left;
 	border-collapse: collapse;
 	
 }
 
-#package-list a
+.package-list a
 {
 	color: #0750a4;
 	text-decoration: underline;
 }
 
-#package-list th
+.package-list th
 {
 	text-align: left;
 }
 
-#package-list tr
+.package-list tr
 {
 	border-bottom: 2px solid #fff;
 }
 
-#package-list tbody tr
+.package-list tbody tr
 {
 	background-color: #f5f5f5;
 	height: 40px;
 }
 
-#package-list td, #package-list th
+.package-list td, .package-list th
 {
 	padding-left: 10px;
 }
 
-#package-list tr.active
+.package-list tr.active
 { 
 	background-color: #d2e1e9;
 	cursor: pointer;
 }
 
-#package-list tbody tr td .list-arrow, #package-list tbody tr.active td .list-arrow
+.package-list tbody tr td .list-arrow, .package-list tbody tr.active td .list-arrow
 {
 	width: 12px;
 	height: 13px;
 	display: block;
 }
 
-#package-list tbody tr td .list-arrow
+.package-list tbody tr td .list-arrow
 {
 	background: url(../images/list-arrow-black.png) no-repeat;
 }
 
-#package-list tbody tr.active td .list-arrow
+.package-list tbody tr.active td .list-arrow
 {
 	background: url(../images/list-arrow-red.png) no-repeat;
 }
@@ -403,6 +403,7 @@ input{
 	border: 1px solid #e1ddde;
 	-webkit-border-radius: 6px 6px 0px 0px;
 	border-radius: 6px 6px 0px 0px; 
+    display: none;
 }
 
 #showHideFilters{
@@ -452,7 +453,7 @@ input{
 	text-decoration: underline;
 }
 
-#package-list thead tr{
+.package-list thead tr{
 	background-color: #e2e2e2;
 }
 
@@ -497,10 +498,10 @@ input{
 	top: 5px;
 }
 
-#package-list th {
+.package-list th {
 	padding: 10px;
 }
-#package-list th:hover {
+.package-list th:hover {
 	cursor: pointer;
 }
 
@@ -508,3 +509,33 @@ input{
 {
 	display:none;
 }
+
+/*
+.package-list th.header {background: url("../images/ui-icons_ffffff_256x240.png") no-repeat right center; overflow: hidden;}
+.package-list th.header.headerSortDown {background-position: -64px -48px;}
+*/
+
+
+/*Tabs overrides*/
+.ui-tabs-nav .ui-icon {
+	display: inline-block;
+}
+
+#offers .ui-tabs .ui-tabs-nav li a {
+    float: left;
+    padding: 10px 13px;
+    text-decoration: none;
+	}
+	
+#offers .ui-tabs .ui-tabs-nav li {
+    margin: 0px;
+}
+
+#offers #tabs, #offers #tabs .ui-corner-all {border-radius: 0px;}
+#offers .ui-widget-header {background: #d6d6d6; border: 0 none; padding: 0;}
+#offers .ui-state-default,#offers .ui-widget-content .ui-state-default,#offers .ui-widget-header .ui-state-default {background: none; border-radius: 0px}
+#offers.ui-state-active,#offers .ui-widget-content .ui-state-active,#offers .ui-widget-header .ui-state-active {background: #fff; border-radius: 0px;}
+/*#offers .ui-state-default,#offers .ui-widget-content .ui-state-default,#offers .ui-widget-header .ui-state-default {background: none;}*/
+
+.filter ul {background-color: #f3f3f3;padding: 15px; margin-bottom: 20px;}
+.filter ul li {padding: 3px 0;}
