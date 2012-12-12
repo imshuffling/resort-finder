@@ -115,7 +115,7 @@ require_once 'include/functions.php';
                         
                         	<div class="filter">
                                 <ul>
-								<span>Resort</span>
+								<h3>Resort</h3>
                                     <?php						
                                     $sql = "SELECT resort_type, resort_type_field   
                                             FROM resorttypes
@@ -130,7 +130,7 @@ require_once 'include/functions.php';
                         <div id="tabs-2">
                             <div class="filter">
                                 <ul>
-								<span>Chalet Size</span>
+								<h3>Chalet Size</h3>
                                     <?php
                                     $sql = "SELECT accommodation, accommodation_field    
                                             FROM accommodationtypes
@@ -145,7 +145,7 @@ require_once 'include/functions.php';
                         <div id="tabs-3">
                             <div class="filter">
                                 <ul>
-								<span>Location</span>
+								<h3>Location</h3>
                                     <?php
                                     $sql = "SELECT location_name   
                                             FROM locations
@@ -157,7 +157,7 @@ require_once 'include/functions.php';
                                     ?>
                                 </ul>
                                 <ul>
-								<span>Country</span>
+								<h3>Country</h3>
                                     <?php
                                     $sql = "SELECT location_name   
                                             FROM locations
@@ -168,7 +168,7 @@ require_once 'include/functions.php';
                                     ?>
                                 </ul>
                                 <ul>
-								<span>Ski Area</span>
+								<h3>Ski Area</h3>
                                     <?php
                                     $sql = "SELECT location_name   
                                             FROM locations
@@ -181,14 +181,14 @@ require_once 'include/functions.php';
                             </div>
 						<button class="closebutton">Close</button>  
 						</div>
-						<div id="tabs-4">
-                             <p>nothing assigned to this tab</p>
+						<div id="tabs-4"> 
+						    <p></p>
 						<button class="closebutton">Close</button> 
 						</div>
 						<div id="tabs-5">
 						    <div class="filter">
                                 <ul>
-								<span>Ski Features</span>
+								<h3>Ski Features</h3>
                                     <?php
                                     $sql = "SELECT features, features_field  
                                             FROM skifeatures
@@ -330,17 +330,15 @@ require_once 'include/functions.php';
                     			<th>Country</th>
                                 <th>Height</th>
                                 <th>Snow Range</th>
-                                <th>Pistes</th>
-                                <th>Beg</th>
-                                <th>Int</th>
-                                <th>Adv</th>
-                                <th>Snb</th>
-                                <th>Shortest Transfer Time</th>
+                                <th>Beginners</th>
+                                <th>Intermediates</th>
+                                <th>Advanced</th>
+                                <th>Snowboarding</th>
                     		</tr>
                         </thead>
                         <tbody>
                         	<?php
-							$sql = "SELECT resort_name, country_name, height_m, snow_range_m, pistes_kms, beginners, intermediate, advanced, snowboarders, shortest_transfer_time 
+							$sql = "SELECT resort_name, country_name, height_m, snow_range_m, beginners, intermediate, advanced, snowboarders 
 									FROM destinations
 									ORDER BY resort_name";
 
@@ -353,12 +351,10 @@ require_once 'include/functions.php';
 											<td>".$row['country_name']."</td>\n
 											<td>".$row['height_m']."</td>\n
 											<td>".$row['snow_range_m']."</td>\n
-											<td>".$row['pistes_kms']."</td>\n
 											<td>".$row['beginners']."</td>\n
 											<td>".$row['intermediate']."</td>\n
 											<td>".$row['advanced']."</td>\n
 											<td>".$row['snowboarders']."</td>\n
-											<td>".$row['shortest_transfer_time']."</td>\n
 										</tr>\n";
 							}
 							mysql_free_result($result);
