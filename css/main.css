@@ -532,10 +532,33 @@ input{
 }
 
 #offers #tabs, #offers #tabs .ui-corner-all {border-radius: 0px;}
+#offers #tabs {float: left; width: 647px; padding: 0;}
 #offers .ui-widget-header {background: #d6d6d6; border: 0 none; padding: 0;}
-#offers .ui-state-default,#offers .ui-widget-content .ui-state-default,#offers .ui-widget-header .ui-state-default {background: none; border-radius: 0px}
-#offers.ui-state-active,#offers .ui-widget-content .ui-state-active,#offers .ui-widget-header .ui-state-active {background: #fff; border-radius: 0px;}
+#offers .ui-state-default,#offers .ui-widget-content .ui-state-default,#offers .ui-widget-header .ui-state-default {background: none; border-radius: 0px ;}
+#offers .ui-state-default a ,#offers .ui-widget-content .ui-state-default,#offers .ui-widget-header .ui-state-default {}
+#offers.ui-state-active,#offers .ui-widget-content .ui-state-active,#offers .ui-widget-header .ui-state-active {background: #fff; border-radius: 0px; border: 0 none;}
 /*#offers .ui-state-default,#offers .ui-widget-content .ui-state-default,#offers .ui-widget-header .ui-state-default {background: none;}*/
 
-.filter ul {background-color: #f3f3f3;padding: 15px; margin-bottom: 20px;}
+/*#offers .ui-state-hover,#offers .ui-widget-content .ui-state-hover,#offers .ui-widget-header .ui-state-hover,#offers .ui-state-focus,#offers .ui-widget-content .ui-state-focus,#offers .ui-widget-header .ui-state-focus { border-top: 0 none; margin: 0; padding: 0; }*/
+
+#offers h3 {padding-bottom: 10px;}
+
+.filter ul {background-color: #f3f3f3;padding: 15px; margin: 0 15px 20px 0; float: left; width: auto;}
 .filter ul li {padding: 3px 0;}
+.closebutton {float: right; clear: both; margin-bottom: 15px;}
+
+
+#package-list thead tr .header {
+    background-image: url("../images/bg.gif");
+    background-position: right center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+
+#package-list thead tr .headerSortUp {
+    background-image: url("../images/asc.gif");
+}
+
+#package-list thead tr .headerSortDown {
+    background-image: url("../images/desc.gif");
+}
