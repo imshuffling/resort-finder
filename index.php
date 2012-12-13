@@ -182,7 +182,38 @@ require_once 'include/functions.php';
 						<button class="closebutton">Close</button>  
 						</div>
 						<div id="tabs-4"> 
-						    <p></p>
+						<div class="filter">
+						    <ul>
+                                    <?php
+                                    $sql = "SELECT depart_from, depart_field   
+                                            FROM departurepoint
+											WHERE depart_group = 1
+                                            ORDER BY order_id";
+                                    $departure_list = getList("AND", $sql, 'depart_from', 'departures', '', 1);
+                                    echo $departure_list;
+                                    ?>
+                            </ul>
+													    <ul>
+                                    <?php
+                                    $sql = "SELECT depart_from, depart_field   
+                                            FROM departurepoint
+											WHERE depart_group = 2
+                                            ORDER BY order_id";
+                                    $departure_list = getList("AND", $sql, 'depart_from', 'departures', '', 2);
+                                    echo $departure_list;
+                                    ?>
+                            </ul>
+													    <ul>
+                                    <?php
+                                    $sql = "SELECT depart_from, depart_field   
+                                            FROM departurepoint
+											WHERE depart_group = 3
+                                            ORDER BY order_id";
+                                    $departure_list = getList("AND", $sql, 'depart_from', 'departures', '', 3);
+                                    echo $departure_list;
+                                    ?>
+                            </ul>
+						</div>	
 						<button class="closebutton">Close</button> 
 						</div>
 						<div id="tabs-5">
