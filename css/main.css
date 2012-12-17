@@ -427,19 +427,19 @@ input{
 #destinationCount{
 	float: left;
 	width:623px;
-    height: 20px;
  	border: 1px solid #e1ddde;
 	border-top: none;
 	padding: 10px 15px;
 }
 
-#destinationCount #resortCount{
-	float: left;
+#resortCount{
+	float: right;
 	font-size: 1.2em;
     font-weight: bold;
+	padding: 10px 0;
 }
 
-#destinationCount #resortCount span{
+#resortCount span{
 	color: #7e7276;
 }
 
@@ -528,17 +528,26 @@ input{
     padding: 10px 18px;
     text-decoration: none;
 	}
+.ui-tabs-nav li:hover {
+border: none;
+background: red;
+}	
+
+.ui-tabs-nav li a:hover {
+background: red;
+}
+	
 	
 #offers .ui-tabs .ui-tabs-nav li {
     margin: 0px;
 }
 
-#offers #tabs, #offers #tabs .ui-corner-all {border-radius: 0px;}
-#offers #tabs {float: left; width: 647px; padding: 0; font-size: 90%;}
+#offers #tabs, #offers #tabs .ui-corner-all {border-radius: 0px; border:1px solid #e1ddde;}
+#offers #tabs {float: left; width: 653px; padding: 0; font-size: 90%;}
 
 /*#offers #tabs-1 .filter ul li {float: left;}*/
 
-#offers .ui-widget-header {background: #d6d6d6; border: 0 none; padding: 0;}
+#offers .ui-widget-header {border: 0 none; padding: 0;}
 #offers .ui-state-default,#offers .ui-widget-content .ui-state-default,#offers .ui-widget-header .ui-state-default {background: none; border-radius: 0px ;}
 #offers .ui-state-default a ,#offers .ui-widget-content .ui-state-default,#offers .ui-widget-header .ui-state-default {}
 #offers.ui-state-active,#offers .ui-widget-content .ui-state-active,#offers .ui-widget-header .ui-state-active {background: #fff; border-radius: 0px; border: 0 none;}
@@ -597,4 +606,24 @@ z-index: 99;
 .filter ul li.TerrainParks{
 display: inline-block;
 position: relative;
+background: url("../images/information-icon.png") no-repeat right center;
+padding-right: 15px;
 }
+#display_text_here {float: left; width: 520px;}
+
+#display_text_here li {float: left;     background-color: #F3F3F3;
+    background-image: url("../images/close-icon.png");
+    border-radius: 15px;
+    margin-right: 5px;
+	margin-bottom: 5px;
+    padding: 5px 20px 5px 5px;
+	background-repeat: no-repeat;
+	background-position: right center;
+	
+	
+	}
+
+	
+	
+	
+	
