@@ -342,9 +342,13 @@ require_once 'include/functions.php';
                         <div id="showHideFilters"><a href="">Show all options</a></div>
                     </div>
                     <div id="destinationCount">
-                    	<div id="resortCount"></div>
+					    <ul id="display_text_here"></ul>
+                    	
                         <div id="clearFilters"><a href="">Reset all filters</a></div>
                     </div>
+					<div id="resortCount"></div>
+					
+	
                 </div>
                 </form>
                 
@@ -361,9 +365,9 @@ require_once 'include/functions.php';
                     			<th>Country</th>
                                 <th>Height</th>
                                 <th>Snow Range</th>
-                                <th>Beginners</th>
-                                <th>Intermediates</th>
-                                <th>Advanced</th>
+                                <th>Beg</th>
+                                <th>Inter</th>
+                                <th>Adv</th>
                                 <th>Snowboarding</th>
                     		</tr>
                         </thead>
@@ -410,6 +414,7 @@ require_once 'include/functions.php';
 			e.preventDefault();
 			jQuery("input").attr('checked', false);
 			sortDestinations();
+			updateTextArea();
 		});
 
 		jQuery("#showHideFilters a").click(function(e){
@@ -422,10 +427,33 @@ require_once 'include/functions.php';
 		sortDestinations();
 		
         jQuery("input[type=checkbox]").change(function(e){
+		
             e.preventDefault();
 			sortDestinations();
-        });
+			
+});
+
+function updateTextArea () {
+    var allVals = [],
+        toDisplay = '';
+    $('#display_text_here').empty();
+    $('#:checked').each(function () {
+        toDisplay = $(this).val();
+        allVals.push(toDisplay);
+        
+        var li = $('<li></li>').text(toDisplay);
+        $('#display_text_here').append(li);
     });
+}
+
+$(document).ready(function () {
+    $('.checkbox').click(updateTextArea);
+    updateTextArea();
+});
+	
+    });
+	
+	
 	
 	function sortDestinations(){
 		var filterQuery = "";
@@ -440,7 +468,7 @@ require_once 'include/functions.php';
 		
 		jQuery("input[type='checkbox']:checked").each(function(){
 			destArr.push("."+jQuery(this).attr('rel'));
-			
+						
 			if(jQuery(this).closest("li").hasClass("OR")){
 				destORArr.push("."+jQuery(this).attr('rel'));
 			}else if(jQuery(this).closest("li").hasClass("AND")){
@@ -522,7 +550,7 @@ require_once 'include/functions.php';
 					feedback = numDestinations + " <span>resorts found</span>";
 					break;			
 		}
-		jQuery("#destinationCount #resortCount").hide().html(feedback).fadeIn();
+		jQuery("#resortCount").hide().html(feedback).fadeIn();
 	}
     </script>
 </body>
