@@ -365,10 +365,10 @@ require_once 'include/functions.php';
                     			<th>Country</th>
                                 <th>Height</th>
                                 <th>Snow Range</th>
-                                <th>Beg</th>
-                                <th>Inter</th>
-                                <th>Adv</th>
-                                <th>Snowboarding</th>
+                                <th class="rating">Beginners</th>
+                                <th class="rating">Intermediate</th>
+                                <th class="rating">Advanced</th>
+                                <th class="rating">Snowboarding</th>
                     		</tr>
                         </thead>
                         <tbody>
@@ -386,10 +386,10 @@ require_once 'include/functions.php';
 											<td>".$row['country_name']."</td>\n
 											<td>".$row['height_m']."</td>\n
 											<td>".$row['snow_range_m']."</td>\n
-											<td>".$row['beginners']."</td>\n
-											<td>".$row['intermediate']."</td>\n
-											<td>".$row['advanced']."</td>\n
-											<td>".$row['snowboarders']."</td>\n
+											<td class='rating". $row['beginners'] ."'>".$row['beginners']."</td>\n
+											<td class='rating". $row['intermediate'] ."'>".$row['intermediate']."</td>\n
+											<td class='rating". $row['advanced'] ."'>".$row['advanced']."</td>\n
+											<td class='rating". $row['snowboarders'] ."'>".$row['snowboarders']."</td>\n
 										</tr>\n";
 							}
 							mysql_free_result($result);
