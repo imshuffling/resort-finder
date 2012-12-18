@@ -353,25 +353,23 @@ require_once 'include/functions.php';
                 </form>
                 
                 
+                <div class="resort-header row">
+				    <div class="resort">Resort</div>
+				    <div class="country">Country</div>
+					<div class="height">Height<small>(metres)</small></div>
+					<div class="snow-range">Snow Range<small>(metres)</small></div>
+					<div class="rating">Beginners</div>
+					<div class="rating">Intermediate</div>
+					<div class="rating">Advanced</div>
+					<div class="rating">Snowboarding</div>		
+				
+				</div>
                 
                 
                 
-                
-                <div id="packages">
-                	<table id="package-list" class="package-list" border="0">
-                    	<thead>
-                    		<tr>
-                   				<th>Resorts</th>
-                    			<th>Country</th>
-                                <th>Height</th>
-                                <th>Snow Range</th>
-                                <th class="rating">Beginners</th>
-                                <th class="rating">Intermediate</th>
-                                <th class="rating">Advanced</th>
-                                <th class="rating">Snowboarding</th>
-                    		</tr>
-                        </thead>
-                        <tbody>
+                <div id="package-list">
+
+						<ul>
                         	<?php
 							$sql = "SELECT resort_name, country_name, height_m, snow_range_m, beginners, intermediate, advanced, snowboarders 
 									FROM destinations
@@ -381,21 +379,24 @@ require_once 'include/functions.php';
 							
 							while($row = dbFetchArray($result)){
 								$classes = getClasses(mysql_real_escape_string($row['resort_name']));
-								echo "	<tr class=\"".$classes."\">\n
-											<td>".$row['resort_name']."</td>\n
-											<td>".$row['country_name']."</td>\n
-											<td>".$row['height_m']."</td>\n
-											<td>".$row['snow_range_m']."</td>\n
-											<td class='rating". $row['beginners'] ."'>".$row['beginners']."</td>\n
-											<td class='rating". $row['intermediate'] ."'>".$row['intermediate']."</td>\n
-											<td class='rating". $row['advanced'] ."'>".$row['advanced']."</td>\n
-											<td class='rating". $row['snowboarders'] ."'>".$row['snowboarders']."</td>\n
-										</tr>\n";
+								echo "	<li class=\"".$classes." row\">\n
+											<div class='resort'>".$row['resort_name']." <img src='http://dummyimage.com/140x80/bfb8bf/424459.jpg'/></div>\n
+											    
+											        <div class='country'>".$row['country_name']."</div>\n
+											        <div class='height'>".$row['height_m']."</div>\n
+											        <div class='snow-range'>".$row['snow_range_m']."</div>\n
+											        <div class='rating". $row['beginners'] ."'>".$row['beginners']."</div>\n
+											        <div class='rating". $row['intermediate'] ."'>".$row['intermediate']."</div>\n
+											        <div class='rating". $row['advanced'] ."'>".$row['advanced']."</div>\n
+											        <div class='rating". $row['snowboarders'] ."'>".$row['snowboarders']."</div>\n
+													
+												
+										</li>\n";		
+										
 							}
 							mysql_free_result($result);
 							?>
-                        </tbody>
-                    </table>
+						</ul>	
                 </div>
                 
             </div> <!-- End main -->
@@ -509,7 +510,7 @@ $(document).ready(function () {
 		
 		filterQuery = filterQuery.replace(/\s+/g, '');		
 		
-		jQuery("#package-list tbody tr").hide();
+		jQuery("#package-list ul li").hide();
 
 
 		if(checkedBoxes > 0){
@@ -520,18 +521,18 @@ $(document).ready(function () {
 			}).get();
 			
 			jQuery.when.apply(null, promises).then(function() {
-				numDestinations = jQuery("#package-list tbody tr:visible").length;
+				numDestinations = jQuery("#package-list ul li:visible").length;
 				destinationsFound(numDestinations);
 			});
 		}else{
-			var promises = jQuery("#package-list tbody tr").map(function() {
+			var promises = jQuery("#package-list ul li").map(function() {
 				var dfrd = jQuery.Deferred();
 				jQuery(this).fadeIn('fast', dfrd.resolve);
 				return dfrd.promise();
 			}).get();
 			
 			jQuery.when.apply(null, promises).then(function() {
-				numDestinations = jQuery("#package-list tbody tr:visible").length;
+				numDestinations = jQuery("#package-list ul li:visible").length;
 				destinationsFound(numDestinations);
 			});
 		}
