@@ -543,7 +543,7 @@ background: red;
 }	
 
 .ui-tabs-nav li a:hover {
-background: red;
+/*background: red;*/
 }
 	
 	
@@ -586,32 +586,6 @@ background: red;
     background-image: url("../images/desc.gif");
 }
 
-.filter ul li.TerrainParks:hover:after {    background: #333;
-background: rgba(0,0,0,.8);
-border-radius: 5px;
-bottom: 26px;
-color: #fff;
-content: "This is a test tooltip boom";
-left: 20%;
-padding: 5px 15px;
-position: absolute;
-z-index: 98;
-width: 220px;
-}
-	
-.filter ul li.TerrainParks:hover:before {
-border: solid;
-border-color: #333 transparent;
-border-width: 6px 6px 0 6px;
-bottom: 20px;
-content: "";
-left: 50%;
-position: absolute;
-z-index: 99;
-
-
-}
-	
 .filter ul li.TerrainParks{
 display: inline-block;
 position: relative;
@@ -632,28 +606,33 @@ padding-right: 15px;
 	
 	}
 
-#package-list {float: left; width: 655px; display: table; font-size: 80%; padding-left: 5px;}
+#package-list {float: left; width: 655px; /*display: table;*/ font-size: 80%; padding-left: 5px;}
 #package-list ul {border-top: 1px solid #ccc;}
 #package-list ul li {display: table-row;}
 #package-list ul li .row {background: #ccc; margin-bottom: 10px; display: table-row; vertical-align: top;}
 
-#package-list ul li div {display: table-cell; }
+#package-list ul li div {/*display: table-cell;*/ float: left; min-height: 16px;}
+#package-list ul li div.resort-bio {padding: 10px; width: 338px; border-bottom: 1px solid #ccc;  min-height: 72px;}
+#package-list ul li div.resort-links {padding: 10px; width: 114px; border-bottom: 1px solid #ccc; border-right: 1px solid #ccc; min-height: 72px;}
+#package-list ul li div.resort-links a {display: block; font-weight: bold; font-size: 90%; text-decoration: underline; line-height: 20px;}
+#package-list ul li div.resort-links div {margin-top: 30px;}
 
 
-.row .resort {width: 200px; border-bottom: 1px solid #ccc; border-right: 1px solid #ccc;border-left: 1px solid #ccc; display: table-cell; padding: 10px;}
+.row .resort {width: 140px; border-bottom: 1px solid #ccc; border-right: 1px solid #ccc;border-left: 1px solid #ccc; /*display: table-cell;*/ padding: 10px;}
 .row .resort img {padding-top: 10px;}
 
 
-.row .country {width: 80px; border-bottom: 1px solid #ccc; border-right: 1px solid #ccc; text-align: center;display: table-cell; padding: 10px;}
-.row .height {width: 100px; border-bottom: 1px solid #ccc; border-right: 1px solid #ccc; text-align: center; display: table-cell; padding: 10px;}
-.row .snow-range {width: 100px; border-bottom: 1px solid #ccc; border-right: 1px solid #ccc; text-align: center;display: table-cell; padding: 10px; }
+.row .country {width: 50px; border-bottom: 1px solid #ccc; border-right: 1px solid #ccc; text-align: center;/*display: table-cell;*/ padding: 10px;}
+.row .height {width: 35px; border-bottom: 1px solid #ccc; border-right: 1px solid #ccc; text-align: center; /*display: table-cell;*/ padding: 10px;}
+.row .snow-range {width: 85px; border-bottom: 1px solid #ccc; border-right: 1px solid #ccc; text-align: center;/*display: table-cell;*/ padding: 10px; }
 .row .rating,
+.row .rating0,
 .row .rating1,
 .row .rating2,
 .row .rating3,
 .row .rating4,
 .row .rating5
- {width: 100px; border-bottom: 1px solid #ccc; border-right: 1px solid #ccc; text-align: center; padding: 10px; display: table-cell;}
+ {width: 44px; border-bottom: 1px solid #ccc; border-right: 1px solid #ccc; text-align: center; padding: 10px; /*display: table-cell;*/}
  
 .rating0 {text-align: center;/*text-indent: -9999px;*/}
 .rating1 {background: url("../images/rating1.png") no-repeat center 15px; text-indent: -9999px;}
@@ -662,13 +641,30 @@ padding-right: 15px;
 .rating4 {background: url("../images/rating4.png") no-repeat center 15px; text-indent: -9999px;}
 .rating5 {background: url("../images/rating5.png") no-repeat center 15px; text-indent: -9999px;}
 
-.resort-header {display: table; position: static; font-size: 80%; background: #EEE; float: left; margin-left: 5px; width: 655px;}
-.resort-header small {display: block;}
-/*.resort-header .resort {width: 161px;}
-.resort-header .country {width: 53px;}
-.resort-header .height {width: 53px;}
-.resort-header .snow-range {width: 81px;}
-.resort-header .good-for {width: 222px; text-align: center;}*/
+.header {position: static; font-size: 80%; background: #EEE url("../images/good-for.png") no-repeat right top; float: left; margin-left: 5px; width: 653px; border-top: 1px solid #ccc; border-left: 1px solid #ccc; border-right: 1px solid #ccc;}
+.header .resort-header {float: left; width: 140px; padding: 10px; min-height: 30px; }
+.header .country-header {float: left; width: 50px; padding: 10px; border-left: 1px solid #ccc; min-height: 30px; }
+.header .height-header {float: left; width: 35px; padding: 10px; border-left: 1px solid #ccc; min-height: 30px;}
+.header .snow-range-header {float: left; width: 85px; padding: 10px; border-left: 1px solid #ccc; min-height: 30px;}
+.header .rating-header {    border-left: 1px solid #CCCCCC; float: left; font-size: 70%; margin-top: 19px; padding: 10px 0; text-align: center; width: 64px;}
+.header small {display: block;}
+
+#package-list ul.information {border-top: none; margin-top: 20px;}
+#package-list ul.information ol {float: left; margin-right: 20px; background: url("../images/information-icon.png") no-repeat scroll left center transparent; padding-left: 15px;}
+
+.ui-tooltip
+	{
+	    font-size: 70% !important;
+		height: 10px !important; 
+	}
+	
+a.external {text-decoration: underline; font-weight: bold;
+
+ background-image: url("../images/externalshort.png");
+    background-position: right center;
+    background-repeat: no-repeat;
+    padding-right: 20px;
+}
 
 
 
