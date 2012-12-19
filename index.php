@@ -17,20 +17,24 @@ require_once 'include/functions.php';
   	<meta name="robots" content="index,follow,noydir,noodp" />
 
 	<script src="js/jquery.1.7.2.min.js"></script>
-	<script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
-	<script language="javascript" type="text/javascript" src="js/jquery.tablesorter.js"></script>
-	<script src="js/jquery.fixedtableheader.min.js" type="text/javascript"> </script> 
-	
-	
+	<script src="js/jquery-ui.js"></script>
+	<!-- <script language="javascript" type="text/javascript" src="js/jquery.tablesorter.js"></script> -->
+	<!-- <script src="js/jquery.fixedtableheader.min.js" type="text/javascript"> </script> -->
 	
 	<script>
 	
-	$(document).ready(function() {
+	/*$(document).ready(function() {
         $('#package-list').fixedtableheader();
-    }); 
+    });*/ 
     $(function() {
         $( "#tabs" ).tabs({
             collapsible: true
+        });
+    });
+	
+	$(function() {
+        $( document ).tooltip({
+            track: true
         });
     });
 	
@@ -353,15 +357,15 @@ require_once 'include/functions.php';
                 </form>
                 
                 
-                <div class="resort-header row">
-				    <div class="resort">Resort</div>
-				    <div class="country">Country</div>
-					<div class="height">Height<small>(metres)</small></div>
-					<div class="snow-range">Snow Range<small>(metres)</small></div>
-					<div class="rating">Beginners</div>
-					<div class="rating">Intermediate</div>
-					<div class="rating">Advanced</div>
-					<div class="rating">Snowboarding</div>		
+                <div class="header row">
+				    <div class="resort-header">Resort</div>
+				    <div class="country-header">Country</div>
+					<div class="height-header">Height<small>(metres)</small></div>
+					<div class="snow-range-header">Snow Range<small>(metres)</small></div>
+					<div class="rating-header">Beginners</div>
+					<div class="rating-header">Intermediate</div>
+					<div class="rating-header">Advanced</div>
+					<div class="rating-header">Snowboarding</div>		
 				
 				</div>
                 
@@ -380,7 +384,7 @@ require_once 'include/functions.php';
 							while($row = dbFetchArray($result)){
 								$classes = getClasses(mysql_real_escape_string($row['resort_name']));
 								echo "	<li class=\"".$classes." row\">\n
-											<div class='resort'>".$row['resort_name']." <img src='http://dummyimage.com/140x80/bfb8bf/424459.jpg'/></div>\n
+											<div class='resort'><p><a class='external' href='#'>".$row['resort_name']."</a></p><img src='http://dummyimage.com/140x80/bfb8bf/424459.jpg'/></div>\n
 											    
 											        <div class='country'>".$row['country_name']."</div>\n
 											        <div class='height'>".$row['height_m']."</div>\n
@@ -389,8 +393,19 @@ require_once 'include/functions.php';
 											        <div class='rating". $row['intermediate'] ."'>".$row['intermediate']."</div>\n
 											        <div class='rating". $row['advanced'] ."'>".$row['advanced']."</div>\n
 											        <div class='rating". $row['snowboarders'] ."'>".$row['snowboarders']."</div>\n
-													
-												
+													<div class='resort-bio'>\n
+													    <p class='info'>".$row['country_name']." is one of blah's most picturesque villages - a true winter wonderland</p>\n
+													    <ul class='information'>
+													        <ol class='free-ski'><p><a href='#' title='Free ski/board social service text'>Free ski/board social service</a></p></ol>\n
+													        <ol class='green-credentials'><p><a href='#' title='Green Credentials text'>Green Credentials</a></p></ol>\n
+													    </ul>\n
+													</div>\n
+													<div class='resort-links'>\n
+													   <div>\n
+													    <a href='#'>View Deals</a>
+														<a href='#'>Search for hotels</a>
+														</div>\n
+													</div>
 										</li>\n";		
 										
 							}
@@ -424,8 +439,8 @@ require_once 'include/functions.php';
 			jQuery(this).toggleClass("close");
 		});
 						
-		jQuery("#package-list").tablesorter({sortList: [[0,0]], locale: 'en', widgets: ['zebra'], useUI: true}); 
-		sortDestinations();
+		/*jQuery("#package-list").tablesorter({sortList: [[0,0]], locale: 'en', widgets: ['zebra'], useUI: true}); 
+		sortDestinations();*/
 		
         jQuery("input[type=checkbox]").change(function(e){
 		
