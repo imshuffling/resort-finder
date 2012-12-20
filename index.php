@@ -384,7 +384,7 @@ require_once 'include/functions.php';
 							while($row = dbFetchArray($result)){
 								$classes = getClasses(mysql_real_escape_string($row['resort_name']));
 								echo "	<li class=\"".$classes." row\">\n
-											<div class='resort'><p><a class='external' href='#'>".$row['resort_name']."</a></p><img src='http://dummyimage.com/140x80/bfb8bf/424459.jpg'/></div>\n
+											<div class='resort'><p><a class='external' href='#'>".$row['resort_name']."</a></p><img src='http://dummyimage.com/105x80/bfb8bf/424459.jpg'/></div>\n
 											    
 											        <div class='country'>".$row['country_name']."</div>\n
 											        <div class='height'>".$row['height_m']."</div>\n
@@ -395,10 +395,10 @@ require_once 'include/functions.php';
 											        <div class='rating". $row['snowboarders'] ."'>".$row['snowboarders']."</div>\n
 													<div class='resort-bio'>\n
 													    <p class='info'>".$row['country_name']." is one of blah's most picturesque villages - a true winter wonderland</p>\n
-													    <ul class='information'>
+													    <!-- <ul class='information'>
 													        <ol class='free-ski'><p><a href='#' title='Free ski/board social service text'>Free ski/board social service</a></p></ol>\n
 													        <ol class='green-credentials'><p><a href='#' title='Green Credentials text'>Green Credentials</a></p></ol>\n
-													    </ul>\n
+													    </ul> -->\n
 													</div>\n
 													<div class='resort-links'>\n
 													   <div>\n
@@ -430,7 +430,7 @@ require_once 'include/functions.php';
 			e.preventDefault();
 			jQuery("input").attr('checked', false);
 			sortDestinations();
-			updateTextArea();
+			//updateTextArea();
 		});
 
 		jQuery("#showHideFilters a").click(function(e){
@@ -452,22 +452,39 @@ require_once 'include/functions.php';
 function updateTextArea () {
     var allVals = [],
         toDisplay = '';
+		
     $('#display_text_here').empty();
-    $('#:checked').each(function () {
-        toDisplay = $(this).val();
-        allVals.push(toDisplay);
         
-        var li = $('<li></li>').text(toDisplay);
-        $('#display_text_here').append(li);
-    });
+		$('#:checked').each(function () {
+            
+			toDisplay = $(this).val();
+            allVals.push(toDisplay);
+        
+            var li = $('<li></li>').text(toDisplay);
+            $('#display_text_here').append(li);
+        });	
+
 }
 
 $(document).ready(function () {
     $('.checkbox').click(updateTextArea);
     updateTextArea();
+	//console.log($('.checkbox').click(updateTextArea));
+
 });
-	
     });
+	
+	(function() {
+	    $('input').click(function()  {
+			//var value = $('input').attr('value');
+			var value = $(this).val();
+			console.log(value);
+			//var valueClicked = $(this).text();
+			//console.log(valueClicked);
+			
+			
+		});
+	})();
 	
 	
 	
