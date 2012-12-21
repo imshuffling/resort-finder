@@ -265,7 +265,7 @@ h1, h2{
 {
 	width: 653px;
 	padding: 0;
-	margin:0 5px;
+	margin:15px 5px;
 	float: left;
 	border: 1px solid #dfddde;
 	border-top: none;
@@ -313,6 +313,17 @@ td.rating2 {background: url("../images/rating2.png") no-repeat center center; te
 td.rating3 {background: url("../images/rating3.png") no-repeat center center; text-indent: -9999px;}
 td.rating4 {background: url("../images/rating4.png") no-repeat center center; text-indent: -9999px;}
 td.rating5 {background: url("../images/rating5.png") no-repeat center center; text-indent: -9999px;}
+
+span.rating0 {text-align: center;/*text-indent: -9999px;*/}
+span.rating1 {background: url("../images/rating1.png") no-repeat center center; text-indent: -9999px; width: 10px; display: inline-block;}
+span.rating2 {background: url("../images/rating2.png") no-repeat center center; text-indent: -9999px; width: 20px; display: inline-block;}
+span.rating3 {background: url("../images/rating3.png") no-repeat center center; text-indent: -9999px; width: 30px; display: inline-block;}
+span.rating4 {background: url("../images/rating4.png") no-repeat center center; text-indent: -9999px; width: 40px; display: inline-block;}
+span.rating5 {background: url("../images/rating5.png") no-repeat center center; text-indent: -9999px; width: 50px; display: inline-block;}
+
+
+ul li.rating {width: 150px;}
+ul li.rating div {    display: inline-block; width: 80px;}
 
 /*th.rating {font-size: 60%;}*/
 

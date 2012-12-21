@@ -103,6 +103,7 @@ require_once 'include/functions.php';
                 <div id="offers">
                 	<h2>Destinations</h2>
 					
+					<div id="resortCount"></div>
 					<div id="tabs">
                         <ul>
                             <li><a href="#tabs-1">Good for<span class="ui-icon ui-icon-triangle-1-s"></span></a></li>
@@ -345,9 +346,7 @@ require_once 'include/functions.php';
 					    <ul id="display_text_here"></ul>
                     	
                         <div id="clearFilters"><a href="">Reset all filters</a></div>
-                    </div>
-					<div id="resortCount"></div>
-					
+                    </div>				
 	
                 </div>
                 </form>
@@ -365,10 +364,7 @@ require_once 'include/functions.php';
                     			<th>Country</th>
                                 <th>Height</th>
                                 <th>Snow Range</th>
-                                <th class="rating">Beginners</th>
-                                <th class="rating">Intermediate</th>
-                                <th class="rating">Advanced</th>
-                                <th class="rating">Snowboarding</th>
+								<th class="order-by">Order by</th>
                     		</tr>
                         </thead>
                         <tbody>
@@ -386,10 +382,16 @@ require_once 'include/functions.php';
 											<td>".$row['country_name']."</td>\n
 											<td>".$row['height_m']."</td>\n
 											<td>".$row['snow_range_m']."</td>\n
-											<td class='rating". $row['beginners'] ."'>".$row['beginners']."</td>\n
-											<td class='rating". $row['intermediate'] ."'>".$row['intermediate']."</td>\n
-											<td class='rating". $row['advanced'] ."'>".$row['advanced']."</td>\n
-											<td class='rating". $row['snowboarders'] ."'>".$row['snowboarders']."</td>\n
+											<td><strong>Good for</strong>
+												<ul>
+													<li class='rating'><div>Experts</div><span class='rating" . $row['beginners'] ."'> " . $row['beginners'] . "</span></li>
+													<li class='rating'><div>Intermediates</div><span class='rating" . $row['intermediate'] ."'> " . $row['intermediate'] . "</span></li>
+													<li class='rating'><div>Beginners</div><span class='rating" . $row['advanced'] ."'> " . $row['advanced'] . "</span></li>
+													<li class='rating'><div>Boarders</div><span class='rating" . $row['snowboarders'] ."'> " . $row['snowboarders'] . "</span></li>
+												</ul>
+																					
+												<span class='more-details'><p>More Details</p></div>													
+											</td>\n
 										</tr>\n";
 							}
 							mysql_free_result($result);
