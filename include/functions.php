@@ -56,10 +56,9 @@ function getList($logic, $sql, $field, $checkBoxType, $destinations_field="", $c
 			$isHidden = "";
 		}
 			
-		//$list .= "<li class='".$logic.$isHidden."'><label><input type='checkbox' name='".$checkBoxType."' rel='c_".parseString($row[$field])."' value='".$row[$field]."' /><span class='itemName'>".$row[$field]." <span class='itemCount'>[".$totalNumber."]</span></span></label></li>\n";
-		$list .= "<li class='".$logic.$isHidden." ".str_replace(" ", "", $row[$field])."'><label><input type='checkbox' class='checkbox' name='".$checkBoxType."' rel='c_".parseString($row[$field])."' value='".$row[$field]."' /><span class='itemName'>".$row[$field]." </span></label></li>\n";
+		$list .= "<li class='".$logic.$isHidden." ".str_replace(" ", "", $row[$field])."'><label><input type='checkbox' class='checkbox' name='".$checkBoxType."' rel='c_".parseString($row[$field])."' value='".$row[$field]."' /><span class='itemName'>".$row[$field]." <span class='itemCount'>(".$totalNumber.")</span></span></label></li>\n";
+		//$list .= "<li class='".$logic.$isHidden." ".str_replace(" ", "", $row[$field])."'><label><input type='checkbox' class='checkbox' name='".$checkBoxType."' rel='c_".parseString($row[$field])."' value='".$row[$field]."' /><span class='itemName'>".$row[$field]." 				$list .= "<li class='".$logic.$isHidden."'><label><input type='checkbox' name='".$checkBoxType."' rel='c_".parseString($row[$field])."' value='".$row[$field]."' /><span class='itemName'>".$row[$field]."<span class='itemCount'>[".$totalNumber."]</span></span></label></li>\n";</span></label></li>\n";
 
-		
 		$counter++;
 	}
 	
