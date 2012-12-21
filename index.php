@@ -372,10 +372,7 @@ require_once 'include/functions.php';
 				    <div class="country-header">Country</div>
 					<div class="height-header">Height<small>(metres)</small></div>
 					<div class="snow-range-header">Snow Range<small>(metres)</small></div>
-					<div class="rating-header">Beginners</div>
-					<div class="rating-header">Intermediate</div>
-					<div class="rating-header">Advanced</div>
-					<div class="rating-header">Snowboarding</div>		
+					<div class="rating-header">Order by</div>
 				
 				</div>
                 
@@ -394,7 +391,7 @@ require_once 'include/functions.php';
 							while($row = dbFetchArray($result)){
 								$classes = getClasses(mysql_real_escape_string($row['resort_name']));
 								echo "	<li class=\"".$classes." row\">\n
-											<div class='resort'><p><a class='external' href='#'>".$row['resort_name']."</a></p><!-- <img src='http://dummyimage.com/105x80/bfb8bf/424459.jpg'/>--></div>\n
+											<div class='resort'><p><a class='external' href='#'>".$row['resort_name']."</a></p><img src='http://dummyimage.com/105x80/bfb8bf/424459.jpg'/></div>\n
 											    
 											        <div class='country'>".$row['country_name']."</div>\n
 											        <div class='height'>".$row['height_m']."</div>\n
@@ -403,6 +400,16 @@ require_once 'include/functions.php';
 											        <div class='rating". $row['intermediate'] ."'>".$row['intermediate']."</div>\n
 											        <div class='rating". $row['advanced'] ."'>".$row['advanced']."</div>\n
 											        <div class='rating". $row['snowboarders'] ."'>".$row['snowboarders']."</div>\n
+													
+													<div class='rating'>
+													  <ul>
+													  <li>													  
+													  </ul>
+													</div>
+													
+													
+													
+													
 													<div class='resort-bio'>\n
 													    <p class='info'>".$row['country_name']." is one of blah's most picturesque villages - a true winter wonderland. <span class='more-details'>More Details</span></p>\n
 													</div>\n
