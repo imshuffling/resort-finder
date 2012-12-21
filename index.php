@@ -29,6 +29,7 @@ require_once 'include/functions.php';
     $(function() {
         $( "#tabs" ).tabs({
             collapsible: true
+			//event: "mouseover"
         });
     });
 	
@@ -53,6 +54,15 @@ require_once 'include/functions.php';
         });
         
     });
+	
+		jQuery(document).ready(function() {
+        jQuery(".expanded-info").hide();
+        //toggle the componenet with class msg_body
+        jQuery(".resort-bio").click(function() {
+		console.log('sdfsdfsddsfsdfsdfsdff');
+	        jQuery(this).next(".expanded-info").slideToggle(500); 
+	    });
+	}); 
 
     </script>
 	
@@ -384,7 +394,7 @@ require_once 'include/functions.php';
 							while($row = dbFetchArray($result)){
 								$classes = getClasses(mysql_real_escape_string($row['resort_name']));
 								echo "	<li class=\"".$classes." row\">\n
-											<div class='resort'><p><a class='external' href='#'>".$row['resort_name']."</a></p><img src='http://dummyimage.com/105x80/bfb8bf/424459.jpg'/></div>\n
+											<div class='resort'><p><a class='external' href='#'>".$row['resort_name']."</a></p><!-- <img src='http://dummyimage.com/105x80/bfb8bf/424459.jpg'/>--></div>\n
 											    
 											        <div class='country'>".$row['country_name']."</div>\n
 											        <div class='height'>".$row['height_m']."</div>\n
@@ -394,18 +404,9 @@ require_once 'include/functions.php';
 											        <div class='rating". $row['advanced'] ."'>".$row['advanced']."</div>\n
 											        <div class='rating". $row['snowboarders'] ."'>".$row['snowboarders']."</div>\n
 													<div class='resort-bio'>\n
-													    <p class='info'>".$row['country_name']." is one of blah's most picturesque villages - a true winter wonderland</p>\n
-													    <!-- <ul class='information'>
-													        <ol class='free-ski'><p><a href='#' title='Free ski/board social service text'>Free ski/board social service</a></p></ol>\n
-													        <ol class='green-credentials'><p><a href='#' title='Green Credentials text'>Green Credentials</a></p></ol>\n
-													    </ul> -->\n
+													    <p class='info'>".$row['country_name']." is one of blah's most picturesque villages - a true winter wonderland. <span class='more-details'>More Details</span></p>\n
 													</div>\n
-													<div class='resort-links'>\n
-													   <div>\n
-													    <a href='#'>View Deals</a>
-														<a href='#'>Search for hotels</a>
-														</div>\n
-													</div>
+													<div class='expanded-info'><img src='http://dummyimage.com/105x80/bfb8bf/424459.jpg'/></div>\n
 										</li>\n";		
 										
 							}
@@ -485,6 +486,23 @@ $(document).ready(function () {
 			
 		});
 	})();
+	
+	
+	/*$('a.plus').click(function(){
+       $(this).prev().slideToggle(); // if your divs are after the plus, use next() instead
+       $(this).toggleClass("minus_icon"); 
+       return false;
+    });*/
+	
+	
+	
+	/*$('.rod-list').hide();
+    $('.rod-tall').hover(function() {
+        $('.rod-list',this).slideToggle('fast');
+    },function() {
+        $('.rod-list',this).slideToggle('fast');
+    });*/
+
 	
 	
 	

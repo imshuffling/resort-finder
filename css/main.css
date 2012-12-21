@@ -526,7 +526,10 @@ input{
 
 
 /*Tabs overrides*/
-.ui-tabs-nav .ui-icon {
+#offers #tabs {float: left; width: 653px; padding: 0; font-size: 90%;}
+
+
+/*.ui-tabs-nav .ui-icon {
 	display: inline-block;
 	background-position: -64px -13px;
 	
@@ -542,8 +545,6 @@ border: none;
 background: red;
 }	
 
-.ui-tabs-nav li a:hover {
-/*background: red;*/
 }
 	
 	
@@ -559,6 +560,7 @@ background: red;
 #offers.ui-state-active,#offers .ui-widget-content .ui-state-active,#offers .ui-widget-header .ui-state-active {background: #fff; border-radius: 0px; border: 0 none;}
 #offers h3 {padding-bottom: 10px;}
 
+*/
 .filter ul {background-color: #f3f3f3;padding: 15px; margin: 0 15px 20px 0; float: left; width: auto; width: 26%;}
 .filter ul li {padding: 5px 0;}
 .closebutton {float: right; clear: both; margin-bottom: 15px;}
@@ -602,12 +604,20 @@ padding-right: 15px;
 #package-list {float: left; width: 655px; /*display: table;*/ font-size: 80%; padding-left: 5px;}
 #package-list ul {border-top: 1px solid #ccc;}
 #package-list ul li {display: table-row;}
+
+/*#package-list ul li:nth-child(odd) {background: #f9f9f9;}
+#package-list ul li:nth-child(even) {background: #fefefe;}*/
+
+/*li:nth-child(odd) { color:green }
+li:nth-child(even) { color:red }*/
+
+
 #package-list ul li .row {background: #ccc; margin-bottom: 10px; display: table-row; vertical-align: top;}
 
 #package-list ul li div {/*display: table-cell;*/ float: left; min-height: 16px;}
-#package-list ul li div.resort-bio {padding: 10px; width: 358px; border-bottom: 1px solid #ccc;  min-height: 72px;}
-#package-list ul li div.resort-links {padding: 10px; width: 114px; border-bottom: 1px solid #ccc; border-right: 1px solid #ccc; min-height: 72px;}
-#package-list ul li div.resort-links a {display: block; font-weight: bold; font-size: 90%; text-decoration: underline; line-height: 20px;}
+#package-list ul li div.resort-bio {padding: 10px; border-bottom: 1px solid #ccc; width: 633px; border-left: 1px solid #ccc; border-right: 1px solid #ccc; background: #fff; }
+#package-list ul li div.resort-bio:hover {cursor: pointer;}
+#package-list ul li div.resort-bio .more-details {/*padding: 10px;*/ float: right; font-weight: bold; text-decoration: underline; }
 /*#package-list ul li div.resort-links div {margin-top: 60px;}*/
 
 
@@ -642,7 +652,9 @@ padding-right: 15px;
 .header .rating-header {    border-left: 1px solid #CCCCCC; float: left; font-size: 70%; margin-top: 19px; padding: 10px 0; text-align: center; width: 64px;}
 .header small {display: block;}
 
-#package-list ul.information {border-top: none; margin-top: 24px;}
+
+
+package-list ul.information {border-top: none; margin-top: 24px;}
 #package-list ul.information ol {float: left; margin-right: 15px; background: url("../images/information-icon.png") no-repeat scroll left center transparent; padding-left: 15px;}
 
 .ui-tooltip
@@ -658,6 +670,9 @@ a.external {text-decoration: underline; /*font-weight: bold;*/
     background-repeat: no-repeat;
     padding-right: 20px;
 }
+
+
+.expanded-info { /*display: none;*/ width: 633px; border-left: 1px solid #ccc; border-right: 1px solid #ccc; padding: 10px; background: red;}
 
 
 
