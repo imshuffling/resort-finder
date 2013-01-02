@@ -55,14 +55,15 @@ require_once 'include/functions.php';
         
     });
 	
-		jQuery(document).ready(function() {
+	jQuery(document).ready(function() {
         jQuery(".expanded-info").hide();
-        //toggle the componenet with class msg_body
+		$('.expanded-info').css('height', $('.expanded-info').height() + 'px');
+		
         jQuery(".resort-bio").click(function() {
 		console.log('sdfsdfsddsfsdfsdfsdff');
 	        jQuery(this).next(".expanded-info").slideToggle(500); 
 	    });
-	}); 
+	});
 
     </script>
 	
@@ -390,18 +391,18 @@ require_once 'include/functions.php';
 							
 							while($row = dbFetchArray($result)){
 								$classes = getClasses(mysql_real_escape_string($row['resort_name']));
-								echo "	<li class=\"".$classes." row\">\n
+								echo "	<li class=\"package ".$classes." row\">\n
 											<div class='resort'><p><a class='external' href='#'>".$row['resort_name']."</a></p><img src='http://dummyimage.com/105x80/bfb8bf/424459.jpg'/></div>\n
 											    
 											        <div class='country'>".$row['country_name']."</div>\n
 											        <div class='height'>".$row['height_m']."</div>\n
 											        <div class='snow-range'>".$row['snow_range_m']."</div>\n													
-													<div class='order-by'>\n
+													<div class='good-for'>\n
 														<ul>\n
-															<li><div>Experts </div><span class='rating" . $row['beginners'] ."'> " . $row['beginners'] . "</span></li>\n
-															<li><div>Intermediates </div><span class='rating" . $row['intermediate'] ."'> " . $row['intermediate'] . "</span></li>\n
-															<li><div>Beginners </div><span class='rating" . $row['advanced'] ."'> " . $row['advanced'] . "</span></li>\n
-															<li><div>Boarders </div><span class='rating" . $row['snowboarders'] ."'> " . $row['snowboarders'] . "</span></li>\n
+															<ol><div>Experts </div><span class='rating" . $row['beginners'] ."'> " . $row['beginners'] . "</span></ol>\n
+															<ol><div>Intermediates </div><span class='rating" . $row['intermediate'] ."'> " . $row['intermediate'] . "</span></ol>\n
+															<ol><div>Beginners </div><span class='rating" . $row['advanced'] ."'> " . $row['advanced'] . "</span></ol>\n
+															<ol><div>Boarders </div><span class='rating" . $row['snowboarders'] ."'> " . $row['snowboarders'] . "</span></ol>\n
 														</ul>\n
 																							
 														<span class='more-details'><p>More Details</p>\n
@@ -411,7 +412,7 @@ require_once 'include/functions.php';
 													<div class='resort-bio'>\n
 													    <p class='info'>".$row['country_name']." is one of blah's most picturesque villages - a true winter wonderland. <span class='more-details'>More Details</span></p>\n
 													</div>\n
-													<div class='expanded-info'><img src='http://dummyimage.com/105x80/bfb8bf/424459.jpg'/></div>\n
+													<div class='expanded-info'><img src='images/offers.jpg'/></div>
 										</li>\n";		
 										
 							}

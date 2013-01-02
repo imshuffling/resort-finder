@@ -634,24 +634,33 @@ padding-right: 15px;
 
 	
 	#package-list {float: left; width: 655px; /*display: table;*/ font-size: 80%; padding-left: 5px;}
-#package-list ul {border-top: 1px solid #ccc;}
-#package-list ul li {display: table-row;}
+#package-list ul li.package {float: left; border-top: 1px solid #ccc; border-bottom: 1px solid #ccc; border-left: 1px solid #ccc; border-right: 1px solid #ccc; margin-bottom: 5px;}
 #package-list ul li .row {background: #ccc; margin-bottom: 10px; display: table-row; vertical-align: top;}
 
 #package-list ul li div {/*display: table-cell;*/ float: left; min-height: 16px;}
-#package-list ul li div.resort-bio {padding: 10px; width: 298px; border-bottom: 1px solid #ccc;  min-height: 72px;}
+#package-list ul li div.resort-bio {padding: 10px; width: 300px;}
+#package-list ul li div.good-for {float: right; width: 175px; border-left: 1px solid #ccc; min-height: 130px; background: #ecebec;}
 #package-list ul li div.resort-links {padding: 10px; width: 114px; border-bottom: 1px solid #ccc; border-right: 1px solid #ccc; min-height: 72px;}
 #package-list ul li div.resort-links a {display: block; font-weight: bold; font-size: 90%; text-decoration: underline; line-height: 20px;}
 /*#package-list ul li div.resort-links div {margin-top: 60px;}*/
 
 
-.row .resort {width: 120px; border-bottom: 1px solid #ccc; border-right: 1px solid #ccc;border-left: 1px solid #ccc; /*display: table-cell;*/ padding: 10px;}
+.expanded-info {background: red; height: 158px;
+    width: 653px;
+	padding: 0;
+	margin: 0;
+	}
+	
+	.expanded-info  img {padding: 0; margin: 0;}
+
+
+.row .resort {width: 120px; border-right: 1px solid #ccc; /*display: table-cell;*/ padding: 10px;}
 .row .resort img {padding-top: 10px;}
 
 
-.row .country {width: 70px; border-bottom: 1px solid #ccc; border-right: 1px solid #ccc; text-align: center;/*display: table-cell;*/ padding: 10px;}
-.row .height {width: 40px; border-bottom: 1px solid #ccc; border-right: 1px solid #ccc; text-align: center; /*display: table-cell;*/ padding: 10px;}
-.row .snow-range {width: 80px; border-bottom: 1px solid #ccc; border-right: 1px solid #ccc; text-align: center;/*display: table-cell;*/ padding: 10px; }
+.row .country {width: 70px; border-bottom: 1px solid #ccc; border-right: 1px solid #ccc; text-align: center;/*display: table-cell;*/ padding: 20px;}
+.row .height {width: 40px; border-bottom: 1px solid #ccc; border-right: 1px solid #ccc; text-align: center; /*display: table-cell;*/ padding: 20px;}
+.row .snow-range {width: 104px; border-bottom: 1px solid #ccc; text-align: center;/*display: table-cell;*/ padding: 20px; }
 /*.row .rating,
 .row .rating0,
 .row .rating1,
@@ -669,12 +678,12 @@ padding-right: 15px;
 .rating4 {background: url("../images/rating4.png") no-repeat center 15px; text-indent: -9999px;}
 .rating5 {background: url("../images/rating5.png") no-repeat center 15px; text-indent: -9999px;}
 
-.header {position: static; font-size: 80%; background: #EEE; float: left; margin-left: 5px; width: 653px; border-top: 1px solid #ccc; border-left: 1px solid #ccc; border-right: 1px solid #ccc;}
+.header {position: static; font-size: 80%; background: #EEE; float: left; margin-left: 5px; width: 653px; border-left: 1px solid #ccc; border-right: 1px solid #ccc;}
 .header .resort-header {float: left; width: 120px; padding: 10px; min-height: 30px; }
-.header .country-header {float: left; width: 70px; padding: 10px; border-left: 1px solid #ccc; min-height: 30px; }
-.header .height-header {float: left; width: 40px; padding: 10px; border-left: 1px solid #ccc; min-height: 30px;}
-.header .snow-range-header {float: left; width: 80px; padding: 10px; border-left: 1px solid #ccc; min-height: 30px;}
-.header .rating-header {    border-left: 1px solid #CCCCCC; float: left; padding: 10px 0; text-align: center; width: 64px; min-height: 30px;}
+.header .country-header {float: left; width: 90px; padding: 10px; border-left: 1px solid #ccc; min-height: 30px; }
+.header .height-header {float: left; width: 60px; padding: 10px; border-left: 1px solid #ccc; min-height: 30px;}
+.header .snow-range-header {float: left; width: 124px; padding: 10px; border-left: 1px solid #ccc; min-height: 30px;}
+.header .rating-header {    border-left: 1px solid #CCCCCC; float: right; padding: 10px 0; text-align: center; width: 175px; min-height: 30px;}
 .header small {display: block;}
 
 #package-list ul.information {border-top: none; margin-top: 24px;}
