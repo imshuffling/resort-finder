@@ -18,16 +18,17 @@ require_once 'include/functions.php';
 
 	<script src="js/jquery.1.7.2.min.js"></script>
 	<script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
-	<script language="javascript" type="text/javascript" src="js/jquery.tablesorter.js"></script>
-	<script src="js/jquery.fixedtableheader.min.js" type="text/javascript"> </script> 
+	<!-- <script language="javascript" type="text/javascript" src="js/jquery.tablesorter.js"></script> -->
+	<!-- <script src="js/jquery.fixedtableheader.min.js" type="text/javascript"> </script> -->
 	
 	
 	
 	<script>
 	
-	$(document).ready(function() {
+	/*$(document).ready(function() {
         $('#package-list').fixedtableheader();
-    }); 
+    });*/
+	
     $(function() {
         $( "#tabs" ).tabs({
             collapsible: true
@@ -109,7 +110,7 @@ require_once 'include/functions.php';
                             <li><a href="#tabs-1">Good for<span class="ui-icon ui-icon-triangle-1-s"></span></a></li>
                             <li><a href="#tabs-2">Accomodation<span class="ui-icon ui-icon-triangle-1-s"></span></a></li>
                             <li><a href="#tabs-3">Destinations<span class="ui-icon ui-icon-triangle-1-s"></span></a></li>
-							<li><a href="#tabs-4">Flying From<span class="ui-icon ui-icon-triangle-1-s"></span></a></li>
+							<li><a href="#tabs-4">Departing From<span class="ui-icon ui-icon-triangle-1-s"></span></a></li>
 							<li><a href="#tabs-5">Ski Features<span class="ui-icon ui-icon-triangle-1-s"></span></a></li>
                         </ul>
                         <div id="tabs-1">
@@ -377,22 +378,22 @@ require_once 'include/functions.php';
 							
 							while($row = dbFetchArray($result)){
 								$classes = getClasses(mysql_real_escape_string($row['resort_name']));
-								echo "	<tr class=\"".$classes."\">\n
-											<td>".$row['resort_name']."</td>\n
-											<td>".$row['country_name']."</td>\n
-											<td>".$row['height_m']."</td>\n
-											<td>".$row['snow_range_m']."</td>\n
-											<td><strong>Good for</strong>
-												<ul>
-													<li class='rating'><div>Experts</div><span class='rating" . $row['beginners'] ."'> " . $row['beginners'] . "</span></li>
-													<li class='rating'><div>Intermediates</div><span class='rating" . $row['intermediate'] ."'> " . $row['intermediate'] . "</span></li>
-													<li class='rating'><div>Beginners</div><span class='rating" . $row['advanced'] ."'> " . $row['advanced'] . "</span></li>
-													<li class='rating'><div>Boarders</div><span class='rating" . $row['snowboarders'] ."'> " . $row['snowboarders'] . "</span></li>
-												</ul>
-																					
-												<span class='more-details'><p>More Details</p></div>													
-											</td>\n
-										</tr>\n";
+								echo "	<tr class=\"resort-package ".$classes."\">\n
+                                                <td rowspan='2'><h3>".$row['resort_name']."</h3><img src='images/105x80.png'/></td>
+                                                <td>".$row['country_name']."</td>
+												<td>".$row['height_m']."</td>
+												<td>".$row['snow_range_m']."</td>
+												<td rowspan='2'><strong>Good for</strong>
+												    <ul>
+													    <li class='rating'><div>Experts</div><span class='rating" . $row['beginners'] ."'> " . $row['beginners'] . "</span></li>
+													    <li class='rating'><div>Intermediates</div><span class='rating" . $row['intermediate'] ."'> " . $row['intermediate'] . "</span></li>
+												        <li class='rating'><div>Beginners</div><span class='rating" . $row['advanced'] ."'> " . $row['advanced'] . "</span></li>
+													    <li class='rating'><div>Boarders</div><span class='rating" . $row['snowboarders'] ."'> " . $row['snowboarders'] . "</span></li>
+												    </ul>
+     												<span class='more-details'><p>More Details</p></div>
+												</td>
+										</tr>
+                                        <tr><td colspan='3' class='info'>".$row['resort_name']." is one of ".$row['country_name']." most picturesque villages - a true winter wonderland.</td></tr>";
 							}
 							mysql_free_result($result);
 							?>
@@ -425,7 +426,7 @@ require_once 'include/functions.php';
 			jQuery(this).toggleClass("close");
 		});
 						
-		jQuery("#package-list").tablesorter({sortList: [[0,0]], locale: 'en', widgets: ['zebra'], useUI: true}); 
+		//jQuery("#package-list").tablesorter({sortList: [[0,0]], locale: 'en', widgets: ['zebra'], useUI: true}); 
 		sortDestinations();
 		
         jQuery("input[type=checkbox]").change(function(e){
