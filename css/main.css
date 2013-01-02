@@ -652,14 +652,15 @@ padding-right: 15px;
 .row .country {width: 70px; border-bottom: 1px solid #ccc; border-right: 1px solid #ccc; text-align: center;/*display: table-cell;*/ padding: 10px;}
 .row .height {width: 40px; border-bottom: 1px solid #ccc; border-right: 1px solid #ccc; text-align: center; /*display: table-cell;*/ padding: 10px;}
 .row .snow-range {width: 80px; border-bottom: 1px solid #ccc; border-right: 1px solid #ccc; text-align: center;/*display: table-cell;*/ padding: 10px; }
-.row .rating,
+/*.row .rating,
 .row .rating0,
 .row .rating1,
 .row .rating2,
 .row .rating3,
 .row .rating4,
 .row .rating5
- {width: 44px; border-bottom: 1px solid #ccc; border-right: 1px solid #ccc; text-align: center; padding: 10px; /*display: table-cell;*/}
+ {width: 44px; border-bottom: 1px solid #ccc; border-right: 1px solid #ccc; text-align: center; padding: 10px; }
+*/
  
 .rating0 {text-align: center;/*text-indent: -9999px;*/}
 .rating1 {background: url("../images/rating1.png") no-repeat center 15px; text-indent: -9999px;}
@@ -692,6 +693,8 @@ a.external {text-decoration: underline; /*font-weight: bold;*/
     background-repeat: no-repeat;
     padding-right: 20px;
 }
+
+.order-by ul {border-top: none;}
 
 	
 	

@@ -395,19 +395,17 @@ require_once 'include/functions.php';
 											    
 											        <div class='country'>".$row['country_name']."</div>\n
 											        <div class='height'>".$row['height_m']."</div>\n
-											        <div class='snow-range'>".$row['snow_range_m']."</div>\n
-											        <div class='rating". $row['beginners'] ."'>".$row['beginners']."</div>\n
-											        <div class='rating". $row['intermediate'] ."'>".$row['intermediate']."</div>\n
-											        <div class='rating". $row['advanced'] ."'>".$row['advanced']."</div>\n
-											        <div class='rating". $row['snowboarders'] ."'>".$row['snowboarders']."</div>\n
-													
-													<div class='rating'>
-													  <ul>
-													  <li>													  
-													  </ul>
-													</div>
-													
-													
+											        <div class='snow-range'>".$row['snow_range_m']."</div>\n													
+													<div class='order-by'>\n
+														<ul>\n
+															<li><div>Experts </div><span class='rating" . $row['beginners'] ."'> " . $row['beginners'] . "</span></li>\n
+															<li><div>Intermediates </div><span class='rating" . $row['intermediate'] ."'> " . $row['intermediate'] . "</span></li>\n
+															<li><div>Beginners </div><span class='rating" . $row['advanced'] ."'> " . $row['advanced'] . "</span></li>\n
+															<li><div>Boarders </div><span class='rating" . $row['snowboarders'] ."'> " . $row['snowboarders'] . "</span></li>\n
+														</ul>\n
+																							
+														<span class='more-details'><p>More Details</p>\n
+														</div>\n
 													
 													
 													<div class='resort-bio'>\n
