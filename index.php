@@ -53,9 +53,9 @@ require_once 'include/functions.php';
         $( ".closebutton" ).click(function(e){
 		    e.preventDefault();
             $(".ui-tabs-panel").hide();
-        });*/
+        });
         
-    });
+    });*/
 	
 	jQuery(document).ready(function() {
         jQuery(".expanded-info").hide();
@@ -261,7 +261,7 @@ require_once 'include/functions.php';
 									</div><!-- .col -->
 								</div><!-- .subNav -->					
 							</li>
-							<li class=" hasSubNav">
+							<li class="right hasSubNav">
 								<a href="javascript:;">Ski Features</a>
 								<div class="subNav">	
 									<div class="col">		
