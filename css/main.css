@@ -3,16 +3,16 @@
 	TUI SKI
 **********************************/
 
+
 *
 {
 	margin: 0px auto 0px auto;
-	bottom: 0;
+	/*bottom: 0;*/
 }
 
 body
 {
 	font: 1em Tahoma, Arial, Helvetica, sans-serif;
-	/*line-height: 1.6em;*/ 
 	font-style: normal; 
 	color: #010000;
     background: #aeaeae;	
@@ -43,6 +43,7 @@ a:hover
 	height: auto;
 	margin-top: 10px;
 }
+
 
 /**** Header ****/
 #header
@@ -526,45 +527,20 @@ input{
 
 
 /*Tabs overrides*/
-.ui-tabs-nav .ui-icon {
-	display: inline-block;
-	background-position: -64px -13px;
-	
-}
-
-#offers .ui-tabs .ui-tabs-nav li a {
-    float: left;
-    padding: 10px 18px;
-    text-decoration: none;
-	}
-.ui-tabs-nav li:hover {
-border: none;
-background: red;
-}	
-
-.ui-tabs-nav li a:hover {
-background: red;
-}
-	
-	
-#offers .ui-tabs .ui-tabs-nav li {
-    margin: 0px;
-}
-
+/*.ui-tabs-nav .ui-icon {display: inline-block; background-position: -64px -13px;}
+#offers .ui-tabs .ui-tabs-nav li a {float: left; padding: 10px 18px; text-decoration: none;}
+.ui-tabs-nav li:hover {border: none;background: red;}	
+.ui-tabs-nav li a:hover {background: red;}
+#offers .ui-tabs .ui-tabs-nav li {margin: 0px;}
 #offers #tabs, #offers #tabs .ui-corner-all {border-radius: 0px; border:1px solid #e1ddde;}
 #offers #tabs {float: left; width: 653px; padding: 0; font-size: 90%;}
-
-/*#offers #tabs-1 .filter ul li {float: left;}*/
-
 #offers .ui-widget-header {border: 0 none; padding: 0;}
 #offers .ui-state-default,#offers .ui-widget-content .ui-state-default,#offers .ui-widget-header .ui-state-default {background: none; border-radius: 0px ;}
 #offers .ui-state-default a ,#offers .ui-widget-content .ui-state-default,#offers .ui-widget-header .ui-state-default {}
 #offers.ui-state-active,#offers .ui-widget-content .ui-state-active,#offers .ui-widget-header .ui-state-active {background: #fff; border-radius: 0px; border: 0 none;}
-/*#offers .ui-state-default,#offers .ui-widget-content .ui-state-default,#offers .ui-widget-header .ui-state-default {background: none;}*/
+#offers h3 {padding-bottom: 10px;}*/
 
-/*#offers .ui-state-hover,#offers .ui-widget-content .ui-state-hover,#offers .ui-widget-header .ui-state-hover,#offers .ui-state-focus,#offers .ui-widget-content .ui-state-focus,#offers .ui-widget-header .ui-state-focus { border-top: 0 none; margin: 0; padding: 0; }*/
-
-#offers h3 {padding-bottom: 10px;}
+/*#offers #tabs-1 .filter ul li {float: left;}*/
 
 .filter ul {background-color: #f3f3f3;padding: 15px; margin: 0 15px 20px 0; float: left; width: 26%;}
 .filter ul li {padding: 5px 0;}
@@ -641,12 +617,18 @@ padding-right: 15px;
 
 #package-list ul li .row {background: #ccc; margin-bottom: 10px; display: table-row; vertical-align: top;}
 
-#package-list ul li div {/*display: table-cell;*/ float: left; min-height: 16px;}
+#package-list ul li div {/*display: table-cell;*/ float: left; /*min-height: 16px;*/}
 #package-list ul li div.resort-bio {padding: 10px; width: 300px;}
-#package-list ul li div.good-for {float: right; width: 175px; border-left: 1px solid #ccc; min-height: 130px; background: #ecebec;}
+#package-list ul li div.good-for {float: right; width: 135px; border-left: 1px solid #ccc; min-height: 130px; background: #ecebec; padding: 10px 20px;}
 #package-list ul li div.resort-links {padding: 10px; width: 114px; border-bottom: 1px solid #ccc; border-right: 1px solid #ccc; min-height: 72px;}
 #package-list ul li div.resort-links a {display: block; font-weight: bold; font-size: 90%; text-decoration: underline; line-height: 20px;}
 /*#package-list ul li div.resort-links div {margin-top: 60px;}*/
+
+
+div.good-for ul ol {padding: 0px; clear: both;}
+div.good-for ul {margin-top: 10px;}
+
+div.good-for .more-details {display: block; clear: both; float: right; margin-top: 15px; text-decoration: underline;}
 
 
 .expanded-info {background: red; height: 158px;
@@ -659,7 +641,7 @@ padding-right: 15px;
 	.expanded-info  img {padding: 0; margin: 0;}
 
 
-.row .resort {width: 120px; border-right: 1px solid #ccc; /*display: table-cell;*/ padding: 10px;}
+.row .resort {width: 120px; border-right: 1px solid #ccc; /*display: table-cell;*/ padding: 10px; min-height: 130px;}
 .row .resort img {padding-top: 10px;}
 
 
@@ -677,11 +659,11 @@ padding-right: 15px;
 */
  
 .rating0 {text-align: center;/*text-indent: -9999px;*/}
-.rating1 {background: url("../images/rating1.png") no-repeat center 15px; text-indent: -9999px;}
-.rating2 {background: url("../images/rating2.png") no-repeat center 15px; text-indent: -9999px;}
-.rating3 {background: url("../images/rating3.png") no-repeat center 15px; text-indent: -9999px;}
-.rating4 {background: url("../images/rating4.png") no-repeat center 15px; text-indent: -9999px;}
-.rating5 {background: url("../images/rating5.png") no-repeat center 15px; text-indent: -9999px;}
+.rating1 {background: url("../images/rating1.png") no-repeat center 5px; text-indent: -9999px; display: block; float: right; width: 10px;}
+.rating2 {background: url("../images/rating2.png") no-repeat center 5px; text-indent: -9999px; display: block; float: right; width: 20px;}
+.rating3 {background: url("../images/rating3.png") no-repeat center 5px; text-indent: -9999px; display: block; float: right; width: 30px;}
+.rating4 {background: url("../images/rating4.png") no-repeat center 5px; text-indent: -9999px; display: block; float: right; width: 40px;}
+.rating5 {background: url("../images/rating5.png") no-repeat center 5px; text-indent: -9999px; display: block; float: right; width: 50px;}
 
 .header {position: static; font-size: 80%; background: #EEE; float: left; margin-left: 5px; width: 653px; border-left: 1px solid #ccc; border-right: 1px solid #ccc;}
 .header .resort-header {float: left; width: 120px; padding: 10px; min-height: 30px; }
@@ -710,6 +692,10 @@ a.external {text-decoration: underline; /*font-weight: bold;*/
 
 .order-by ul {border-top: none;}
 
-	
-	
+
+
+/*megamenu overrides*/
+.megadropdown li.hasSubNav {
+    padding-right: 1.5em !important;
+}
 	

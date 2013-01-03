@@ -11,6 +11,8 @@ require_once 'include/functions.php';
 	<title>Crystal Ski Destinations</title>
 	<meta name="description" content="" />
 	<link rel="stylesheet" type="text/css" href="css/main.css" media="screen"/>
+	<link rel="stylesheet" type="text/css" href="css/megadropdown.css" media="screen"/>
+	<link rel="stylesheet" type="text/css" href="css/ie7.css" media="screen"/>
 	<link rel="stylesheet" type="text/css" href="css/smoothness/jquery-ui-1.9.2.custom.css"/>
     		
 	<meta name="expires" content="never" />
@@ -26,12 +28,12 @@ require_once 'include/functions.php';
 	/*$(document).ready(function() {
         $('#package-list').fixedtableheader();
     });*/ 
-    $(function() {
+    /*$(function() {
         $( "#tabs" ).tabs({
-            collapsible: true
-			//event: "mouseover"
+            collapsible: true,
+			event: "mouseover"
         });
-    });
+    });*/
 	
 	$(function() {
         $( document ).tooltip({
@@ -40,7 +42,7 @@ require_once 'include/functions.php';
     });
 	
 	
-	$(function() {
+	/*$(function() {
         $( ".closebutton" ).button({
             icons: {
                 primary: "ui-icon-circle-close"
@@ -51,17 +53,17 @@ require_once 'include/functions.php';
         $( ".closebutton" ).click(function(e){
 		    e.preventDefault();
             $(".ui-tabs-panel").hide();
-        });
+        });*/
         
     });
 	
 	jQuery(document).ready(function() {
         jQuery(".expanded-info").hide();
 		
-        jQuery(".resort-bio").click(function() {
+        jQuery("li.package").click(function() {
 		// to do - make the whole thing clickable!!
 		console.log('sdfsdfsddsfsdfsdfsdff');
-	        jQuery(this).next(".expanded-info").slideToggle(500); 
+	        jQuery(this).children(".expanded-info").slideToggle(500); 
 	    });
 	});
 
@@ -120,136 +122,164 @@ require_once 'include/functions.php';
 					
 					<div id="resortCount"></div>
 					
-					<div id="tabs">
-                        <ul>
-                            <li><a href="#tabs-1">Good for<span class="ui-icon ui-icon-triangle-1-s"></span></a></li>
-                            <li><a href="#tabs-2">Accomodation<span class="ui-icon ui-icon-triangle-1-s"></span></a></li>
-                            <li><a href="#tabs-3">Destinations<span class="ui-icon ui-icon-triangle-1-s"></span></a></li>
-							<li><a href="#tabs-4">Flying From<span class="ui-icon ui-icon-triangle-1-s"></span></a></li>
-							<li><a href="#tabs-5">Ski Features<span class="ui-icon ui-icon-triangle-1-s"></span></a></li>
-                        </ul>
-                        <div id="tabs-1">
-                        
-                        	<div class="filter">
-                                <ul>
-								<h3>Resort</h3>
-                                    <?php						
-                                    $sql = "SELECT resort_type, resort_type_field   
-                                            FROM resorttypes
-                                            ORDER BY order_id";
-                                    $resort_list = getList("AND", $sql, 'resort_type', 'resorts', 'resort_type_field');
-                                    echo $resort_list;
-                                    ?>
-                                </ul>
-								<button class="closebutton">Close</button>  
-                            </div>
-                        </div>
-                        <div id="tabs-2">
-                            <div class="filter">
-                                <ul>
-								<h3>Chalet Size</h3>
-                                    <?php
-                                    $sql = "SELECT accommodation, accommodation_field    
-                                            FROM accommodationtypes
-                                            ORDER BY order_id";
-                                    $accommodation_list = getList("AND", $sql, 'accommodation', 'accommodation', 'accommodation_field');
-                                    echo $accommodation_list;
-                                    ?>
-                                </ul>
-                            </div>                            
-						<button class="closebutton">Close</button>  
-						</div>
-                        <div id="tabs-3">
-                            <div class="filter">
-                                <ul>
-								<h3>Location</h3>
-                                    <?php
-                                    $sql = "SELECT location_name   
-                                            FROM locations
-                                            WHERE location_group = 1
-                                            ORDER BY location_name";
-                                                
-                                    $location_list = getList("OR", $sql, 'location_name', 'location', '', 1);
-                                    echo $location_list;
-                                    ?>
-                                </ul>
-                                <ul>
-								<h3>Country</h3>
-                                    <?php
-                                    $sql = "SELECT location_name   
-                                            FROM locations
-                                            WHERE location_group = 2
-                                            ORDER BY location_name";
-                                    $location_list = getList("OR", $sql, 'location_name', 'location', '', 2);
-                                    echo $location_list;
-                                    ?>
-                                </ul>
-                                <ul>
-								<h3>Ski Area</h3>
-                                    <?php
-                                    $sql = "SELECT location_name   
-                                            FROM locations
-                                            WHERE location_group = 3
-                                            ORDER BY location_name";
-                                    $location_list = getList("OR", $sql, 'location_name', 'location', '', 3);
-                                    echo $location_list;
-                                    ?>
-                                </ul>
-                            </div>
-						<button class="closebutton">Close</button>  
-						</div>
-						<div id="tabs-4"> 
-						<div class="filter">
-						    <ul>
-                                    <?php
-                                    $sql = "SELECT depart_from, depart_field   
-                                            FROM departurepoint
-											WHERE depart_group = 1
-                                            ORDER BY order_id";
-                                    $departure_list = getList("AND", $sql, 'depart_from', 'departures', '', 1);
-                                    echo $departure_list;
-                                    ?>
-                            </ul>
-													    <ul>
-                                    <?php
-                                    $sql = "SELECT depart_from, depart_field   
-                                            FROM departurepoint
-											WHERE depart_group = 2
-                                            ORDER BY order_id";
-                                    $departure_list = getList("AND", $sql, 'depart_from', 'departures', '', 2);
-                                    echo $departure_list;
-                                    ?>
-                            </ul>
-													    <ul>
-                                    <?php
-                                    $sql = "SELECT depart_from, depart_field   
-                                            FROM departurepoint
-											WHERE depart_group = 3
-                                            ORDER BY order_id";
-                                    $departure_list = getList("AND", $sql, 'depart_from', 'departures', '', 3);
-                                    echo $departure_list;
-                                    ?>
-                            </ul>
-						</div>	
-						<button class="closebutton">Close</button> 
-						</div>
-						<div id="tabs-5">
-						    <div class="filter">
-                                <ul>
-								<h3>Ski Features</h3>
-                                    <?php
-                                    $sql = "SELECT features, features_field  
-                                            FROM skifeatures
-                                            ORDER BY order_id";
-                                    $features_list = getList("AND", $sql, 'features', 'features', 'features_field');
-                                    echo $features_list;
-                                    ?>
-                                </ul>
-                            </div>
-						<button class="closebutton">Close</button> 
-						</div>
-                    </div>
 					
+					<div class="megadropdown grey">
+						<ul>		
+							<li class=" hasSubNav">
+								<a href="javascript:;">Good for</a>
+								<div class="subNav">	
+									<div class="col">		
+										<h3>Resort</h3>	
+										<ul>
+											<?php						
+												$sql = "SELECT resort_type, resort_type_field   
+												FROM resorttypes
+												ORDER BY order_id";
+												$resort_list = getList("AND", $sql, 'resort_type', 'resorts', 'resort_type_field');
+												echo $resort_list;
+											?>
+										</ul>					
+									</div><!-- .col -->
+								</div><!-- .subNav -->					
+							</li>
+							<li class=" hasSubNav">
+								<a href="javascript:;">Accomodation</a>
+								<div class="subNav twoCol">	
+									<div class="col">		
+										<h3>Chalet size</h3>	
+										<ul>
+											<?php
+												$sql = "SELECT accommodation, accommodation_field    
+												FROM accommodationtypes
+												ORDER BY order_id";
+												$accommodation_list = getList("AND", $sql, 'accommodation', 'accommodation', 'accommodation_field');
+												echo $accommodation_list;
+											?>
+										</ul>					
+									</div><!-- .col -->
+					
+									<div class="col">
+									<h3>Accomodation type</h3>
+										<ul>
+											<li><a target="_blank" href="http://themeforest.net">Theme Forest</a></li>
+											<li><a target="_blank" href="http://codecanyon.net">Code Canyon</a></li>
+											<li><a target="_blank" href="http://graphicriver.net">Graphic River</a></li>
+											<li><a target="_blank" href="http://audiojungle.net">Audio Jungle</a></li>
+										</ul>	
+									</div><!-- .col -->
+								</div><!-- .subNav -->					
+							</li>
+							<li class=" hasSubNav">
+								<a href="javascript:;">Destinations</a>
+								<div class="subNav threeCol">	
+									<div class="col">		
+										<h3>Europe</h3>	
+										<ul>
+											<?php
+												$sql = "SELECT location_name   
+												FROM locations
+												WHERE location_group = 1
+												ORDER BY location_name";
+												$location_list = getList("OR", $sql, 'location_name', 'location', '', 1);
+												echo $location_list;
+											?>
+										</ul>					
+									</div><!-- .col -->
+					
+									<div class="col">
+									<h3>ROW</h3>
+										<ul>
+											<?php
+												$sql = "SELECT location_name   
+												FROM locations
+												WHERE location_group = 2
+												ORDER BY location_name";
+												$location_list = getList("OR", $sql, 'location_name', 'location', '', 2);
+												echo $location_list;
+											?>
+										</ul>	
+									</div><!-- .col -->
+					
+									<div class="col">
+									<h3>Ski Areas</h3>
+										<ul>
+											<?php
+												$sql = "SELECT location_name   
+												FROM locations
+												WHERE location_group = 3
+												ORDER BY location_name";
+												$location_list = getList("OR", $sql, 'location_name', 'location', '', 3);
+												echo $location_list;
+											?>
+										</ul>	
+									</div><!-- .col -->
+								</div><!-- .subNav -->					
+							</li>
+							<li class=" hasSubNav">
+								<a href="javascript:;">Departing from</a>
+								<div class="subNav threeCol">	
+									<div class="col">		
+										<h3>Europe</h3>	
+										<ul>
+											<?php
+												$sql = "SELECT depart_from, depart_field   
+												FROM departurepoint
+												WHERE depart_group = 1
+												ORDER BY order_id";
+												$departure_list = getList("AND", $sql, 'depart_from', 'departures', '', 1);
+												echo $departure_list;
+											?>
+										</ul>					
+									</div><!-- .col -->
+					
+									<div class="col">
+									<h3>ROW</h3>
+										<ul>
+											<?php
+												$sql = "SELECT depart_from, depart_field   
+												FROM departurepoint
+												WHERE depart_group = 2
+												ORDER BY order_id";
+												$departure_list = getList("AND", $sql, 'depart_from', 'departures', '', 2);
+												echo $departure_list;
+											?>
+										</ul>	
+									</div><!-- .col -->
+					
+									<div class="col">
+									<h3>Ski Areas</h3>
+										<ul>
+											<?php
+												$sql = "SELECT depart_from, depart_field   
+												FROM departurepoint
+												WHERE depart_group = 3
+												ORDER BY order_id";
+												$departure_list = getList("AND", $sql, 'depart_from', 'departures', '', 3);
+												echo $departure_list;
+											?>
+										</ul>	
+									</div><!-- .col -->
+								</div><!-- .subNav -->					
+							</li>
+							<li class=" hasSubNav">
+								<a href="javascript:;">Ski Features</a>
+								<div class="subNav">	
+									<div class="col">		
+										<h3>Resort</h3>	
+										<ul>
+											<?php
+												$sql = "SELECT features, features_field  
+												FROM skifeatures
+												ORDER BY order_id";
+												$features_list = getList("AND", $sql, 'features', 'features', 'features_field');
+												echo $features_list;
+											?>
+										</ul>					
+									</div><!-- .col -->
+								</div><!-- .subNav -->					
+							</li>
+						</ul>
+					</div>
                     <div id="filter-holder">
                         <div class="filters">
                         	<div class="filter">
@@ -400,6 +430,7 @@ require_once 'include/functions.php';
 											        <div class='height'>".$row['height_m']."</div>\n
 											        <div class='snow-range'>".$row['snow_range_m']."</div>\n													
 													<div class='good-for'>\n
+													<h3>Good for...</h3>\n
 														<ul>\n
 															<ol><div>Experts </div><span class='rating" . $row['beginners'] ."'> " . $row['beginners'] . "</span></ol>\n
 															<ol><div>Intermediates </div><span class='rating" . $row['intermediate'] ."'> " . $row['intermediate'] . "</span></ol>\n
@@ -439,7 +470,7 @@ require_once 'include/functions.php';
 			e.preventDefault();
 			jQuery("input").attr('checked', false);
 			sortDestinations();
-			//updateTextArea();
+			updateTextArea();
 		});
 
 		jQuery("#showHideFilters a").click(function(e){
@@ -452,18 +483,15 @@ require_once 'include/functions.php';
 		sortDestinations();*/
 		
         jQuery("input[type=checkbox]").change(function(e){
-		
             e.preventDefault();
-			sortDestinations();
-			
-});
+			sortDestinations();	
+        });
 
 function updateTextArea () {
     var allVals = [],
         toDisplay = '';
 		
     $('#display_text_here').empty();
-        
 		$('#:checked').each(function () {
             
 			toDisplay = $(this).val();
@@ -494,26 +522,7 @@ $(document).ready(function () {
 			
 		});
 	})();
-	
-	
-	/*$('a.plus').click(function(){
-       $(this).prev().slideToggle(); // if your divs are after the plus, use next() instead
-       $(this).toggleClass("minus_icon"); 
-       return false;
-    });*/
-	
-	
-	
-	/*$('.rod-list').hide();
-    $('.rod-tall').hover(function() {
-        $('.rod-list',this).slideToggle('fast');
-    },function() {
-        $('.rod-list',this).slideToggle('fast');
-    });*/
-
-	
-	
-	
+		
 	function sortDestinations(){
 		var filterQuery = "";
 		var numDestinations = 0;
