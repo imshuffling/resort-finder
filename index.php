@@ -57,9 +57,9 @@ require_once 'include/functions.php';
 	
 	jQuery(document).ready(function() {
         jQuery(".expanded-info").hide();
-		$('.expanded-info').css('height', $('.expanded-info').height() + 'px');
 		
         jQuery(".resort-bio").click(function() {
+		// to do - make the whole thing clickable!!
 		console.log('sdfsdfsddsfsdfsdfsdff');
 	        jQuery(this).next(".expanded-info").slideToggle(500); 
 	    });
@@ -117,6 +117,8 @@ require_once 'include/functions.php';
                 <form action="">
                 <div id="offers">
                 	<h2>Destinations</h2>
+					
+					<div id="resortCount"></div>
 					
 					<div id="tabs">
                         <ul>
@@ -601,10 +603,12 @@ $(document).ready(function () {
 					feedback = "<span>No resorts found</span></div>";
 					break;
 			case 1:
-					feedback = numDestinations + " <span>resort found</span>";
+					//feedback = numDestinations + "<span>resort found</span>";
+					feedback = "<span> Showing </span> " + numDestinations + " <span>of</span> 150 resorts";
 					break;
 			default:
-					feedback = numDestinations + " <span>resorts found</span>";
+					//feedback = numDestinations + " <span>resorts found</span>";
+					feedback = "<span> Showing </span> " + numDestinations + " <span>of</span> 150 resorts";
 					break;			
 		}
 		jQuery("#resortCount").hide().html(feedback).fadeIn();
