@@ -27,22 +27,9 @@ require_once 'include/functions.php';
 	
 	/*$(document).ready(function() {
         $('#package-list').fixedtableheader();
-    });*/ 
-    /*$(function() {
-        $( "#tabs" ).tabs({
-            collapsible: true,
-			event: "mouseover"
-        });
     });*/
 	
 	$(function() {
-        $( document ).tooltip({
-            track: true
-        });
-    });
-	
-	
-	/*$(function() {
         $( ".closebutton" ).button({
             icons: {
                 primary: "ui-icon-circle-close"
@@ -55,7 +42,7 @@ require_once 'include/functions.php';
             $(".ui-tabs-panel").hide();
         });
         
-    });*/
+    });
 	
 	jQuery(document).ready(function() {
         jQuery(".expanded-info").hide();
@@ -161,10 +148,13 @@ require_once 'include/functions.php';
 									<div class="col">
 									<h3>Accomodation type</h3>
 										<ul>
-											<li><a target="_blank" href="http://themeforest.net">Theme Forest</a></li>
-											<li><a target="_blank" href="http://codecanyon.net">Code Canyon</a></li>
-											<li><a target="_blank" href="http://graphicriver.net">Graphic River</a></li>
-											<li><a target="_blank" href="http://audiojungle.net">Audio Jungle</a></li>
+											<?php
+												$sql = "SELECT accommodation, accommodation_field    
+												FROM accommodationtypes
+												ORDER BY order_id";
+												$accommodation_list = getList("AND", $sql, 'accommodation', 'accommodation', 'accommodation_field');
+												echo $accommodation_list;
+											?>
 										</ul>	
 									</div><!-- .col -->
 								</div><!-- .subNav -->					
@@ -613,11 +603,11 @@ $(document).ready(function () {
 					break;
 			case 1:
 					//feedback = numDestinations + "<span>resort found</span>";
-					feedback = "<span> Showing </span> " + numDestinations + " <span>of</span> 150 resorts";
+					feedback = "<span> Showing </span> " + numDestinations + " <span>of</span> 146 resorts";
 					break;
 			default:
 					//feedback = numDestinations + " <span>resorts found</span>";
-					feedback = "<span> Showing </span> " + numDestinations + " <span>of</span> 150 resorts";
+					feedback = "<span> Showing </span> " + numDestinations + " <span>of</span> 146 resorts";
 					break;			
 		}
 		jQuery("#resortCount").hide().html(feedback).fadeIn();
