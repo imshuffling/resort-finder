@@ -21,37 +21,38 @@ require_once 'include/functions.php';
 	<script src="js/jquery-ui.js"></script>	
 	<script>
 	
-$(function() {
-    // Stick the #nav to the top of the window
-    var nav = $(".header.row");
-    var navHomeY = nav.offset().top;
-    var isFixed = false;
-    var $w = $(window);
-    $w.scroll(function() {
-        var scrollTop = $w.scrollTop();
-        var shouldBeFixed = scrollTop > navHomeY;
-        if (shouldBeFixed && !isFixed) {
-            nav.css({
-                position: "fixed",
-                top: 0,
-				margin: 0,
-                left: nav.offset().left,
-                width: nav.width(),
-				borderBottom: '1px solid #ccc'
-            });
-            isFixed = true;
-        }
-        else if (!shouldBeFixed && isFixed)
-        {
-            nav.css({
-                position: "static",
-				marginLeft: 5,
-				borderBottom: 0
-            });
-            isFixed = false;
-        }
-    });
-});
+	$(function() {
+
+		// This sticks resort header to top of the page..
+		var nav = $(".header.row");
+		var navHomeY = nav.offset().top;
+		var isFixed = false;
+		var $w = $(window);
+		$w.scroll(function() {
+			var scrollTop = $w.scrollTop();
+			var shouldBeFixed = scrollTop > navHomeY;
+			if (shouldBeFixed && !isFixed) {
+				nav.css({
+					position: "fixed",
+					top: 0,
+					margin: 0,
+					left: nav.offset().left,
+					width: nav.width(),
+					borderBottom: '1px solid #ccc'
+				});
+				isFixed = true;
+			}
+			else if (!shouldBeFixed && isFixed)
+			{
+				nav.css({
+					position: "static",
+					marginLeft: 5,
+					borderBottom: 0
+				});
+				isFixed = false;
+			}
+		});
+	});
 
 	jQuery(document).ready(function() {
         jQuery(".expanded-info").hide();
