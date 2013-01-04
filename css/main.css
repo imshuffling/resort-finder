@@ -698,4 +698,24 @@ a.external {text-decoration: underline; /*font-weight: bold;*/
 .megadropdown li {
 	margin: 10px 3px 0 0 !important;
 }
-	
+
+/*End megamenu overrides*/
+#where-to-go {
+  float: left;
+  margin-left: 5px;
+  margin-top: 15px;
+  width: 655px;
+}
+
+#where-to-go h3 {color: #7E7276;}
+#where-to-go ul {border-top: 1px solid #ccc; margin-top: 10px;}
+#where-to-go ul li {padding: 10px 0 10px 0; border-bottom: 1px solid #ccc;}
+#where-to-go ul li:hover {cursor: pointer; background: #fefefe;}
+
+#where-to-go ul li.active p {background-position: 2px -18px;}
+#where-to-go ul li p {
+    background: url("../images/plus.png") no-repeat scroll 2px 2px transparent;
+    font-size: 80%;
+    line-height: 1.6em;
+    padding-left: 30px;
+}

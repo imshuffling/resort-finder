@@ -1,0 +1,4 @@
+AuthType Basic
+AuthName "Protected area"
+AuthUserFile /var/www/thirstythursdays.co.uk/html/resort-finder/.htpasswd
+Require valid-user

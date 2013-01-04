@@ -16,7 +16,7 @@ require_once 'include/functions.php';
 	<link rel="stylesheet" type="text/css" href="css/smoothness/jquery-ui-1.9.2.custom.css"/>
     		
 	<meta name="expires" content="never" />
-  	<meta name="robots" content="index,follow,noydir,noodp" />
+  	<meta name="robots" content="no-index,no-follow,noydir,noodp" />
 
 	<script src="js/jquery.1.7.2.min.js"></script>
 	<script src="js/jquery-ui.js"></script>
@@ -51,6 +51,17 @@ require_once 'include/functions.php';
 		// to do - make the whole thing clickable!!
 		console.log('sdfsdfsddsfsdfsdfsdff');
 	        jQuery(this).children(".expanded-info").slideToggle(500); 
+	    });
+	});
+	
+	
+	jQuery(document).ready(function() {
+        jQuery(".accordian-resort").hide();
+		
+        jQuery("#where-to-go ul li").click(function() {
+		// to do - make the whole thing clickable!!
+		console.log('sdfsdfsddsfsdfsdfsdff');
+	        jQuery(this).toggleClass("active").children(".accordian-resort").slideToggle(500); 
 	    });
 	});
 
@@ -163,7 +174,6 @@ require_once 'include/functions.php';
 								<a href="javascript:;">Destinations</a>
 								<div class="subNav threeCol">	
 									<div class="col">		
-										<h3>Europe</h3>	
 										<ul>
 											<?php
 												$sql = "SELECT location_name   
@@ -177,7 +187,6 @@ require_once 'include/functions.php';
 									</div><!-- .col -->
 					
 									<div class="col">
-									<h3>ROW</h3>
 										<ul>
 											<?php
 												$sql = "SELECT location_name   
@@ -191,7 +200,6 @@ require_once 'include/functions.php';
 									</div><!-- .col -->
 					
 									<div class="col">
-									<h3>Ski Areas</h3>
 										<ul>
 											<?php
 												$sql = "SELECT location_name   
@@ -206,50 +214,7 @@ require_once 'include/functions.php';
 								</div><!-- .subNav -->					
 							</li>
 							<li class=" hasSubNav">
-								<a href="javascript:;">Departing from</a>
-								<div class="subNav threeCol">	
-									<div class="col">		
-										<h3>Europe</h3>	
-										<ul>
-											<?php
-												$sql = "SELECT depart_from, depart_field   
-												FROM departurepoint
-												WHERE depart_group = 1
-												ORDER BY order_id";
-												$departure_list = getList("AND", $sql, 'depart_from', 'departures', '', 1);
-												echo $departure_list;
-											?>
-										</ul>					
-									</div><!-- .col -->
-					
-									<div class="col">
-									<h3>ROW</h3>
-										<ul>
-											<?php
-												$sql = "SELECT depart_from, depart_field   
-												FROM departurepoint
-												WHERE depart_group = 2
-												ORDER BY order_id";
-												$departure_list = getList("AND", $sql, 'depart_from', 'departures', '', 2);
-												echo $departure_list;
-											?>
-										</ul>	
-									</div><!-- .col -->
-					
-									<div class="col">
-									<h3>Ski Areas</h3>
-										<ul>
-											<?php
-												$sql = "SELECT depart_from, depart_field   
-												FROM departurepoint
-												WHERE depart_group = 3
-												ORDER BY order_id";
-												$departure_list = getList("AND", $sql, 'depart_from', 'departures', '', 3);
-												echo $departure_list;
-											?>
-										</ul>	
-									</div><!-- .col -->
-								</div><!-- .subNav -->					
+								<a href="javascript:;">Departing from</a>			
 							</li>
 							<li class="right hasSubNav">
 								<a href="javascript:;">Ski Features</a>
@@ -443,6 +408,20 @@ require_once 'include/functions.php';
 							?>
 						</ul>	
                 </div>
+				
+			<div id="where-to-go">
+				<h3>Already know where you want to go?</h3>
+				<ul>
+					<li>
+						<p>European Destinations</p>
+						<img class="accordian-resort" src="images/accordian-resort.png" />
+					</li>
+					<li>
+						<p>Worldwide Destinations</p>
+						<img class="accordian-resort"src="images/accordian-resort.png" />
+					</li>
+				</ul>
+			</div><!-- End Where-to-go -->
                 
             </div> <!-- End main -->
             
@@ -610,7 +589,7 @@ $(document).ready(function () {
 					feedback = "<span> Showing </span> " + numDestinations + " <span>of</span> 146 resorts";
 					break;			
 		}
-		jQuery("#resortCount").hide().html(feedback).fadeIn();
+		jQuery("#resortCount").html(feedback).fadeIn();
 	}
     </script>
 </body>
