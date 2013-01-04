@@ -673,11 +673,11 @@ div.good-for .more-details {display: block; clear: both; float: right; margin-to
 .rating5 {background: url("../images/rating5.png") no-repeat center 5px; text-indent: -9999px; display: block; float: right; width: 50px;}
 
 .header {position: static; font-size: 80%; background: #EEE; float: left; margin-left: 5px; width: 653px; border-left: 1px solid #ccc; border-right: 1px solid #ccc;}
-.header .resort-header {float: left; width: 120px; padding: 10px; min-height: 30px; }
-.header .country-header {float: left; width: 90px; padding: 10px; border-left: 1px solid #ccc; min-height: 30px; }
-.header .height-header {float: left; width: 60px; padding: 10px; border-left: 1px solid #ccc; min-height: 30px;}
-.header .snow-range-header {float: left; width: 124px; padding: 10px; border-left: 1px solid #ccc; min-height: 30px;}
-.header .rating-header {    border-left: 1px solid #CCCCCC; float: right; padding: 10px 0; text-align: center; width: 175px; min-height: 30px;}
+.header .resort-header {float: left; width: 120px; padding: 10px; min-height: 30px; background: url("../images/bg.gif") no-repeat right 13px; }
+.header .country-header {float: left; width: 90px; padding: 10px; border-left: 1px solid #ccc; min-height: 30px; background: url("../images/bg.gif") no-repeat right 13px;}
+.header .height-header {float: left; width: 60px; padding: 10px; border-left: 1px solid #ccc; min-height: 30px; background: url("../images/bg.gif") no-repeat right 13px;}
+.header .snow-range-header {float: left; width: 124px; padding: 10px; border-left: 1px solid #ccc; min-height: 30px; background: url("../images/bg.gif") no-repeat right 13px;}
+.header .rating-header {    border-left: 1px solid #CCCCCC; float: right; padding: 10px 0; text-align: center; width: 175px; min-height: 30px; background: url("../images/bg.gif") no-repeat right 13px;}
 .header small {display: block;}
 
 #package-list ul.information {border-top: none; margin-top: 24px;}
