@@ -29,7 +29,7 @@ require_once 'include/functions.php';
         $('#package-list').fixedtableheader();
     });*/
 	
-	$(function() {
+	/*$(function() {
         $( ".closebutton" ).button({
             icons: {
                 primary: "ui-icon-circle-close"
@@ -42,15 +42,15 @@ require_once 'include/functions.php';
             $(".ui-tabs-panel").hide();
         });
         
-    });
+    });*/
 	
 	jQuery(document).ready(function() {
         jQuery(".expanded-info").hide();
 		
         jQuery("li.package").click(function() {
 		// to do - make the whole thing clickable!!
-		console.log('sdfsdfsddsfsdfsdfsdff');
-	        jQuery(this).children(".expanded-info").slideToggle(500); 
+		//console.log('sdfsdfsddsfsdfsdfsdff');
+	        jQuery(this).toggleClass("active").children(".expanded-info").slideToggle(500); 
 	    });
 	});
 	
@@ -414,11 +414,11 @@ require_once 'include/functions.php';
 				<ul>
 					<li>
 						<p>European Destinations</p>
-						<img class="accordian-resort" src="images/accordian-resort.png" />
+						<div class="accordian-resort"><img src="images/accordian-resort.png"/></div>
 					</li>
 					<li>
 						<p>Worldwide Destinations</p>
-						<img class="accordian-resort"src="images/accordian-resort.png" />
+						<div class="accordian-resort"><img src="images/accordian-resort.png" /></div>
 					</li>
 				</ul>
 			</div><!-- End Where-to-go -->

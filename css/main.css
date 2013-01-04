@@ -614,6 +614,13 @@ padding-right: 15px;
 #package-list ul li.package:hover {background: #f3f3f3; cursor: pointer;}
 
 
+#package-list ul li.active div.good-for {background: #ecebec url("../images/cross.png") no-repeat top right;
+
+-webkit-transition: visibility 0.2s linear, opacity 0.2s linear; -moz-transition: visibility 0.2s linear, opacity 0.2s linear; -o-transition: visibility 0.2s linear, opacity 0.2s linear;
+
+}
+
+
 
 #package-list ul li .row {background: #ccc; margin-bottom: 10px; display: table-row; vertical-align: top;}
 
@@ -719,3 +726,11 @@ a.external {text-decoration: underline; /*font-weight: bold;*/
     line-height: 1.6em;
     padding-left: 30px;
 }
+
+.accordian-resort {
+  padding: 0;
+  margin: 0;
+  width: 655px;
+  height: 536px;
+}
+
