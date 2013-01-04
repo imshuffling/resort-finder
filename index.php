@@ -58,8 +58,7 @@ require_once 'include/functions.php';
         jQuery(".expanded-info").hide();
 		
         jQuery("li.package").click(function() {
-		// to do - make the whole thing clickable!!
-		//console.log('sdfsdfsddsfsdfsdfsdff');
+		// toggling packages
 	        jQuery(this).toggleClass("active").children(".expanded-info").slideToggle(500); 
 	    });
 	});
@@ -69,8 +68,7 @@ require_once 'include/functions.php';
         jQuery(".accordian-resort").hide();
 		
         jQuery("#where-to-go ul li").click(function() {
-		// to do - make the whole thing clickable!!
-		console.log('sdfsdfsddsfsdfsdfsdff');
+		// Where to go slide-section.
 	        jQuery(this).toggleClass("active").children(".accordian-resort").slideToggle(500); 
 	    });
 	});
@@ -529,30 +527,16 @@ $(document).ready(function () {
 });
     });
 	
-	(function() {
+	/*(function() {
 	    $('input').click(function()  {
-			//var value = $('input').attr('value');
-			//var value = $(this).val();
-			//console.log(value);
-			//var valueClicked = $(this).text();
-			//console.log(valueClicked);
-			
-			
-		});
-	})();
-	
-	(function() {
-	    $('#display_text_here li').click(function()  {
-			//var value = $('input').attr('value');
+			var value = $('input').attr('value');
 			var value = $(this).val();
 			console.log(value);
-			//var valueClicked = $(this).text();
-			//console.log(valueClicked);
-			
-			
+			var valueClicked = $(this).text();
+			console.log(valueClicked);
 		});
-	})();
-		
+	})();*/
+			
 	function sortDestinations(){
 		var filterQuery = "";
 		var numDestinations = 0;
