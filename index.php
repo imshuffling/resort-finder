@@ -214,7 +214,45 @@ require_once 'include/functions.php';
 								</div><!-- .subNav -->					
 							</li>
 							<li class=" hasSubNav">
-								<a href="javascript:;">Departing from</a>			
+								<a href="javascript:;">Departing from</a>
+								<div class="subNav threeCol">	
+									<div class="col">		
+										<ul>
+										<?php
+											$sql = "SELECT depart_from, depart_field   
+                                            FROM departurepoint
+											WHERE depart_group = 1
+                                            ORDER BY order_id";
+											$departure_list = getList("AND", $sql, 'depart_from', 'departures', '', 1);
+											echo $departure_list;
+										?>
+										</ul>					
+									</div><!-- .col -->
+									<div class="col">		
+										<ul>
+										<?php
+											$sql = "SELECT depart_from, depart_field   
+                                            FROM departurepoint
+											WHERE depart_group = 2
+                                            ORDER BY order_id";
+											$departure_list = getList("AND", $sql, 'depart_from', 'departures', '', 2);
+											echo $departure_list;
+										?>
+										</ul>					
+									</div><!-- .col -->
+									<div class="col">		
+										<ul>
+										<?php
+											$sql = "SELECT depart_from, depart_field   
+                                            FROM departurepoint
+											WHERE depart_group = 3
+                                            ORDER BY order_id";
+											$departure_list = getList("AND", $sql, 'depart_from', 'departures', '', 3);
+											echo $departure_list;
+										?>
+										</ul>					
+									</div><!-- .col -->
+								</div><!-- .subNav -->
 							</li>
 							<li class="right hasSubNav">
 								<a href="javascript:;">Ski Features</a>
@@ -368,7 +406,7 @@ require_once 'include/functions.php';
                 
                 <div id="package-list">
 
-						<ul>
+						<ul class="packages-list">
                         	<?php
 							$sql = "SELECT resort_name, country_name, height_m, snow_range_m, beginners, intermediate, advanced, snowboarders 
 									FROM destinations
