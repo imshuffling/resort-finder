@@ -17,33 +17,42 @@ require_once 'include/functions.php';
     		
 	<meta name="expires" content="never" />
   	<meta name="robots" content="no-index,no-follow,noydir,noodp" />
-
 	<script src="js/jquery.1.7.2.min.js"></script>
-	<script src="js/jquery-ui.js"></script>
-	<!-- <script language="javascript" type="text/javascript" src="js/jquery.tablesorter.js"></script> -->
-	<!-- <script src="js/jquery.fixedtableheader.min.js" type="text/javascript"> </script> -->
-	
+	<script src="js/jquery-ui.js"></script>	
 	<script>
 	
-	/*$(document).ready(function() {
-        $('#package-list').fixedtableheader();
-    });*/
-	
-	/*$(function() {
-        $( ".closebutton" ).button({
-            icons: {
-                primary: "ui-icon-circle-close"
-            },
-            text: close
-        });
+$(function() {
+    // Stick the #nav to the top of the window
+    var nav = $(".header.row");
+    var navHomeY = nav.offset().top;
+    var isFixed = false;
+    var $w = $(window);
+    $w.scroll(function() {
+        var scrollTop = $w.scrollTop();
+        var shouldBeFixed = scrollTop > navHomeY;
+        if (shouldBeFixed && !isFixed) {
+            nav.css({
+                position: "fixed",
+                top: 0,
+				margin: 0,
+                left: nav.offset().left,
+                width: nav.width(),
+				borderBottom: '1px solid #ccc'
+            });
+            isFixed = true;
+        }
+        else if (!shouldBeFixed && isFixed)
+        {
+            nav.css({
+                position: "static",
+				marginLeft: 5,
+				borderBottom: 0
+            });
+            isFixed = false;
+        }
+    });
+});
 
-        $( ".closebutton" ).click(function(e){
-		    e.preventDefault();
-            $(".ui-tabs-panel").hide();
-        });
-        
-    });*/
-	
 	jQuery(document).ready(function() {
         jQuery(".expanded-info").hide();
 		
@@ -392,15 +401,16 @@ require_once 'include/functions.php';
                 </div>
                 </form>
                 
-                
-                <div class="header row">
-				    <div class="resort-header">Resort</div>
-				    <div class="country-header">Country</div>
-					<div class="height-header">Height<small>(metres)</small></div>
-					<div class="snow-range-header">Snow Range<small>(metres)</small></div>
-					<div class="rating-header">Order by</div>
-				
-				</div>
+                <div class="header-wrap">
+					<div class="header row">
+						<div class="resort-header">Resort</div>
+						<div class="country-header">Country</div>
+						<div class="height-header">Height<small>(metres)</small></div>
+						<div class="snow-range-header">Snow Range<small>(metres)</small></div>
+						<div class="rating-header">Order by</div>
+					
+					</div>
+				</div><!-- END header-wrap -->	
                 
                 
                 
@@ -520,6 +530,18 @@ $(document).ready(function () {
 	
 	(function() {
 	    $('input').click(function()  {
+			//var value = $('input').attr('value');
+			//var value = $(this).val();
+			//console.log(value);
+			//var valueClicked = $(this).text();
+			//console.log(valueClicked);
+			
+			
+		});
+	})();
+	
+	(function() {
+	    $('#display_text_here li').click(function()  {
 			//var value = $('input').attr('value');
 			var value = $(this).val();
 			console.log(value);
