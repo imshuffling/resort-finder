@@ -9,8 +9,8 @@
  	height: 50px; 
  	border: solid 1px #0C65B6;
 	
-	-webkit-border-radius: 6px;
-	-moz-border-radius: 6px;
+	/*-webkit-border-radius: 6px;
+	-moz-border-radius: 6px;*/
  }
 	
 	.megadropdown ul	{ width: 98%; padding: 0 !important; margin: 0 auto !important; }
@@ -65,9 +65,9 @@
 		.subNav 
 		{ 
 			background: #FC0;
-			background: -moz-linear-gradient(top,  #FFFFFF 0%, #DDDDDD 100%) !important;
-			background: -webkit-gradient( linear, left top, left bottom, color-stop(0, #FFFFFF ), color-stop(1, #DDDDDD));	
-			filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFFFFF', endColorstr='#DDDDDD');
+			background: -moz-linear-gradient(top,  #FFFFFF 0%, #FFFFFF 100%) !important;
+			background: -webkit-gradient( linear, left top, left bottom, color-stop(0, #FFFFFF ), color-stop(1, #FFFFFF));	
+			filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFFFFF', endColorstr='#FFFFFF');
 			width: 160px;
 			font-size: 11px;
 			line-height: 1.7em;
@@ -146,8 +146,8 @@
     
 	border: solid 1px #414141  !important;
 	
-	-webkit-border-radius: 6px !important;
-	-moz-border-radius: 6px !important;
+	/*-webkit-border-radius: 6px !important;
+	-moz-border-radius: 6px !important;*/
 }
 
 .megadropdown.grey li.current, .megadropdown.grey li:hover { background-color: #555555; border-color: transparent;  }

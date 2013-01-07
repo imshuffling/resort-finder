@@ -201,7 +201,11 @@ a:hover
 	position: relative;
 }
 
+h3 {
+    color: #7E7276;
+}
 
+h3.heading { font-size: 120%;}
 
 
 
@@ -443,10 +447,10 @@ input{
 }
 
 #resortCount{
-	/*float: right;*/
+	float: right;
 	font-size: 1.2em;
     font-weight: bold;
-	padding: 10px 0;
+	padding: 0px 0px;
 }
 
 #resortCount span{
@@ -708,10 +712,9 @@ a.external {text-decoration: underline; /*font-weight: bold;*/
 
 /*End megamenu overrides*/
 #where-to-go {
-  float: left;
-  margin-left: 5px;
   margin-top: 15px;
   width: 655px;
+  font-size: 120%;
 }
 
 #where-to-go h3 {color: #7E7276;}
@@ -736,4 +739,24 @@ a.external {text-decoration: underline; /*font-weight: bold;*/
 
 .row {/*postion: fixed;*/}
 .header-wrap {height: 50px;}
+
+
+
+.resortWrapper {height: 20px; padding: 10px; margin-top: 15px;}
+
+h3.heading {
+    float: left;
+    font-size: 120%;
+    padding: 0;
+}
+
+
+
+
+
+.subNav.threeCol .col li.Europe, .subNav.threeCol .col li.ROW {border-bottom: 1px solid #ccc !important; padding-bottom: 10px !important;}
+.subNav.threeCol .col {border-right: 1px solid #ccc !important; width: 149px !important;}
+.subNav.threeCol .col:nth-child(3) {border-right: 0 none !important;}
+
+.subNav.threeCol .col h3 {border-bottom: 1px solid #ccc !important; padding-bottom: 9px !important;}
 

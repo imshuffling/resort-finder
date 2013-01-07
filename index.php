@@ -20,6 +20,27 @@ require_once 'include/functions.php';
 	<script src="js/jquery.1.7.2.min.js"></script>
 	<script src="js/jquery-ui.js"></script>	
 	<script>
+		
+	jQuery(document).ready(function() {
+        jQuery(".expanded-info").hide();
+		
+        jQuery("li.package").click(function() {
+		// toggling packages
+	        jQuery(this).toggleClass("active").children(".expanded-info").slideToggle(500); 
+		
+	    });
+	});
+	
+	
+	jQuery(document).ready(function() {
+        jQuery(".accordian-resort").hide();
+		
+        jQuery("#where-to-go ul li").click(function() {
+		// Where to go slide-section.
+	        jQuery(this).toggleClass("active").children(".accordian-resort").slideToggle(500); 
+	    });
+	});
+	
 	
 	$(function() {
 
@@ -54,30 +75,12 @@ require_once 'include/functions.php';
 		});
 	});
 
-	jQuery(document).ready(function() {
-        jQuery(".expanded-info").hide();
-		
-        jQuery("li.package").click(function() {
-		// toggling packages
-	        jQuery(this).toggleClass("active").children(".expanded-info").slideToggle(500); 
-	    });
-	});
-	
-	
-	jQuery(document).ready(function() {
-        jQuery(".accordian-resort").hide();
-		
-        jQuery("#where-to-go ul li").click(function() {
-		// Where to go slide-section.
-	        jQuery(this).toggleClass("active").children(".accordian-resort").slideToggle(500); 
-	    });
-	});
-
     </script>
 	
 </head>
 
 <body id="browser">
+
 	<div id="wrapper">
         <div id="header">
             <div id="logo"><a href="#" title="Crystal Ski &amp; Snowboard"><img src="images/header_06.jpg" alt="Crystal Ski &amp; Snowboard" /></a>
@@ -119,23 +122,38 @@ require_once 'include/functions.php';
         </div> <!-- End header -->
       
         <div id="content-body">
-        
+		       
             <div id="main">
-
+			
                 <form action="">
                 <div id="offers">
                 	<h2>Destinations</h2>
 					
-					<div id="resortCount"></div>
+				<div id="where-to-go">
+						<h3>Already know where you want to go?</h3>
+					<ul>
+						<li>
+							<p>European Destinations</p>
+							<div class="accordian-resort"><img src="images/accordian-resort.png"/></div>
+						</li>
+						<li>
+							<p>Worldwide Destinations</p>
+							<div class="accordian-resort"><img src="images/accordian-resort.png" /></div>
+						</li>
+					</ul>
+				</div><!-- End Where-to-go -->
 					
+				<div class="resortWrapper">	
+					<h3 class="heading">Find your perfect resort.</h3>
+					<div id="resortCount"></div>
+				</div>	
 					
 					<div class="megadropdown grey">
 						<ul>		
 							<li class=" hasSubNav">
 								<a href="javascript:;">Good for</a>
 								<div class="subNav">	
-									<div class="col">		
-										<h3>Resort</h3>	
+									<div class="col">									
 										<ul>
 											<?php						
 												$sql = "SELECT resort_type, resort_type_field   
@@ -187,7 +205,7 @@ require_once 'include/functions.php';
 												$sql = "SELECT location_name   
 												FROM locations
 												WHERE location_group = 1
-												ORDER BY location_name";
+												ORDER BY id";
 												$location_list = getList("OR", $sql, 'location_name', 'location', '', 1);
 												echo $location_list;
 											?>
@@ -200,14 +218,15 @@ require_once 'include/functions.php';
 												$sql = "SELECT location_name   
 												FROM locations
 												WHERE location_group = 2
-												ORDER BY location_name";
+												ORDER BY id";
 												$location_list = getList("OR", $sql, 'location_name', 'location', '', 2);
 												echo $location_list;
 											?>
 										</ul>	
 									</div><!-- .col -->
 					
-									<div class="col">
+									<div class="col last">
+									<h3>Ski Areas</h3>
 										<ul>
 											<?php
 												$sql = "SELECT location_name   
@@ -266,7 +285,6 @@ require_once 'include/functions.php';
 								<a href="javascript:;">Ski Features</a>
 								<div class="subNav">	
 									<div class="col">		
-										<h3>Resort</h3>	
 										<ul>
 											<?php
 												$sql = "SELECT features, features_field  
@@ -455,21 +473,7 @@ require_once 'include/functions.php';
 							?>
 						</ul>	
                 </div>
-				
-			<div id="where-to-go">
-				<h3>Already know where you want to go?</h3>
-				<ul>
-					<li>
-						<p>European Destinations</p>
-						<div class="accordian-resort"><img src="images/accordian-resort.png"/></div>
-					</li>
-					<li>
-						<p>Worldwide Destinations</p>
-						<div class="accordian-resort"><img src="images/accordian-resort.png" /></div>
-					</li>
-				</ul>
-			</div><!-- End Where-to-go -->
-                
+				                
             </div> <!-- End main -->
             
             <div id="sidebar">
@@ -489,11 +493,11 @@ require_once 'include/functions.php';
 			updateTextArea();
 		});
 
-		jQuery("#showHideFilters a").click(function(e){
+		/*jQuery("#showHideFilters a").click(function(e){
 			e.preventDefault();
 			jQuery(".hide").slideToggle("fast");
 			jQuery(this).toggleClass("close");
-		});
+		});*/
 						
 		/*jQuery("#package-list").tablesorter({sortList: [[0,0]], locale: 'en', widgets: ['zebra'], useUI: true}); 
 		sortDestinations();*/
