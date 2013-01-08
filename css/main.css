@@ -742,11 +742,11 @@ a.external {text-decoration: underline; /*font-weight: bold;*/
 
 
 
-.resortWrapper {height: 20px; padding: 10px; margin-top: 15px;}
+.resortWrapper {height: 20px; padding: 10px 0; margin-top: 15px;}
 
 h3.heading {
     float: left;
-    font-size: 120%;
+    font-size: 140%;
     padding: 0;
 }
 
