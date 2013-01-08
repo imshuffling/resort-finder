@@ -21,7 +21,7 @@ require_once 'include/functions.php';
 	<script src="js/jquery-ui.js"></script>	
 	<script>
 		
-	jQuery(document).ready(function() {
+	/*jQuery(document).ready(function() {
         jQuery(".expanded-info").hide();
 		
         jQuery("li.package").click(function() {
@@ -29,7 +29,7 @@ require_once 'include/functions.php';
 	        jQuery(this).toggleClass("active").children(".expanded-info").slideToggle(500); 
 		
 	    });
-	});
+	});*/
 	
 	
 	jQuery(document).ready(function() {
@@ -42,7 +42,7 @@ require_once 'include/functions.php';
 	});
 	
 	
-	$(function() {
+	/*$(function() {
 
 		// This sticks resort header to top of the page..
 		var nav = $(".header.row");
@@ -73,7 +73,7 @@ require_once 'include/functions.php';
 				isFixed = false;
 			}
 		});
-	});
+	});*/
 
     </script>
 	
@@ -145,7 +145,6 @@ require_once 'include/functions.php';
 					
 				<div class="resortWrapper">	
 					<h3 class="heading">Find your perfect resort.</h3>
-					<div id="resortCount"></div>
 				</div>	
 					
 					<div class="megadropdown grey">
@@ -414,11 +413,12 @@ require_once 'include/functions.php';
                     </div>
 					<div id="resortCount"></div>
 					
+					
 	
                 </div>
                 </form>
                 
-                <div class="header-wrap">
+                <!--<div class="header-wrap">
 					<div class="header row">
 						<div class="resort-header">Resort</div>
 						<div class="country-header">Country</div>
@@ -427,7 +427,7 @@ require_once 'include/functions.php';
 						<div class="rating-header">Order by</div>
 					
 					</div>
-				</div><!-- END header-wrap -->	
+				</div>--><!-- END header-wrap -->	
                 
                 
                 
@@ -443,29 +443,21 @@ require_once 'include/functions.php';
 							
 							while($row = dbFetchArray($result)){
 								$classes = getClasses(mysql_real_escape_string($row['resort_name']));
-								echo "	<li class=\"package ".$classes." row\">\n
-											<div class='resort'><p><a class='external' href='#'>".$row['resort_name']."</a></p><img src='images/105x80.jpg'/></div>\n
-											    
-											        <div class='country'>".$row['country_name']."</div>\n
-											        <div class='height'>".$row['height_m']."</div>\n
-											        <div class='snow-range'>".$row['snow_range_m']."</div>\n													
-													<div class='good-for'>\n
-													<h3>Good for...</h3>\n
-														<ul>\n
-															<ol><div>Experts </div><span class='rating" . $row['beginners'] ."'> " . $row['beginners'] . "</span></ol>\n
-															<ol><div>Intermediates </div><span class='rating" . $row['intermediate'] ."'> " . $row['intermediate'] . "</span></ol>\n
-															<ol><div>Beginners </div><span class='rating" . $row['advanced'] ."'> " . $row['advanced'] . "</span></ol>\n
-															<ol><div>Boarders </div><span class='rating" . $row['snowboarders'] ."'> " . $row['snowboarders'] . "</span></ol>\n
-														</ul>\n
-																							
-														<span class='more-details'><p>More Details</p>\n
-														</div>\n
-													
-													
-													<div class='resort-bio'>\n
-													    <p class='info'>".$row['country_name']." is one of blah's most picturesque villages - a true winter wonderland. <span class='more-details'>More Details</span></p>\n
-													</div>\n
-													<div class='expanded-info'><img src='images/offers.jpg'/></div>
+								
+								$row['snow_range_m'] = str_replace("-","-<br/>", $row['snow_range_m']);
+
+								echo "	<li class=\"resort-package ".$classes." row\">\n
+											<h3><strong>".$row['resort_name'].",</strong> ".$row['country_name']."</h3>
+
+											<ul class='details'>
+												<ol><span>Height</span><strong>".$row['height_m']."</strong></ol>
+												<ol><span>Range</span><strong>".$row['snow_range_m']."</strong></ol>
+												<ol class='rating beg'><span>Beg</span><strong class='ratings stars".$row['beginners']."'>".$row['beginners']."</strong></ol>
+												<ol class='rating int'><span>Int</span><strong class='ratings stars".$row['intermediate']."'>".$row['intermediate']."</strong></ol>
+												<ol class='rating exp'><span>Exp</span><strong class='ratings stars".$row['advanced']."'>".$row['advanced']."</strong></ol>
+												<ol class='rating board'><span>Board</span><strong class='ratings stars".$row['snowboarders']."'>".$row['snowboarders']."</strong></ol>
+											</ul>
+											<img src='images/extras.png' />
 										</li>\n";		
 										
 							}
