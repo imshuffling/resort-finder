@@ -17,24 +17,46 @@ require_once 'include/functions.php';
     		
 	<meta name="expires" content="never" />
   	<meta name="robots" content="no-index,no-follow,noydir,noodp" />
+	<script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/prototype/1/prototype.js'></script>
 	<script src="js/jquery.1.7.2.min.js"></script>
 	<script src="js/jquery-ui.js"></script>	
 	<script>
-		
+	
+	/*jQuery(document).ready(function() {	
+	$("ul.packages-list li").bind("mousemove", function(event) {
+			$(this).find(".more-information").css({
+				top: event.pageY + 5 + "px",
+				left: event.pageX + 5 + "px"
+			}).show();
+		}).bind("mouseout", function() {
+		$(".more-information").hide();
+	});
+	});	*/
+	
+	jQuery(document).ready(function() {	
+		$(function() {
+			$("ul.packages-list li h3").hover(function() {
+				$(this).next("div").fadeIn("slow");
+			},function(){
+				$(this).next("div").fadeOut("slow");
+			});
+		});
+	});
+	
+	/*TO DO TOOLTIPS*/
+	
 	/*jQuery(document).ready(function() {
-        jQuery(".expanded-info").hide();
+        jQuery(".more-information").hide();		
+        jQuery("ul.packages-list li h3").click(function() {
+		// Where to go slide-section.
 		
-        jQuery("li.package").click(function() {
-		// toggling packages
-	        jQuery(this).toggleClass("active").children(".expanded-info").slideToggle(500); 
-		
+	        jQuery(this).show(".more-information"); 
 	    });
 	});*/
-	
+
 	
 	jQuery(document).ready(function() {
-        jQuery(".accordian-resort").hide();
-		
+        jQuery(".accordian-resort").hide();		
         jQuery("#where-to-go ul li").click(function() {
 		// Where to go slide-section.
 	        jQuery(this).toggleClass("active").children(".accordian-resort").slideToggle(500); 
@@ -74,7 +96,7 @@ require_once 'include/functions.php';
 			}
 		});
 	});*/
-
+	
     </script>
 	
 </head>
@@ -448,7 +470,10 @@ require_once 'include/functions.php';
 
 								echo "	<li class=\"resort-package ".$classes." row\">\n
 											<h3><strong>".$row['resort_name'].",</strong> ".$row['country_name']."</h3>
-											<div class='more-information'><img src='images/105x80.jpg' /></div>
+											<div class='more-information'>
+												<img src='images/105x80.jpg' />
+												<p>Austria is one of blah's most picturesque villages - a true winter wonderland. More Details</p>
+											</div>
 
 											<ul class='details'>
 												<ol><span>Height</span><strong>".$row['height_m']."</strong></ol>

@@ -769,13 +769,15 @@ h3.heading {
 
 
 ul.packages-list {/*margin-top: 10px;*/}
-li.resort-package {border: 1px solid #ccc; margin-bottom: 10px; padding: 15px; min-height: 130px; clear: both; background: url('../images/special-offers.png') no-repeat right center;}
+li.resort-package {border: 1px solid #ccc; margin-bottom: 10px; padding: 15px; min-height: 130px; clear: both; background: url('../images/special-offers.png') no-repeat right center; position: relative;}
 
-li.resort-package h3 strong {font-size: 120%; color: #333;}
-li.resort-package h3 {margin-bottom: 10px;}
+li.resort-package h3 strong {font-size: 120%; color: #333; }
+li.resort-package h3:hover {cursor: pointer;}
+li.resort-package h3 {margin-bottom: 10px; /*background: url("../images/information-icon.png") no-repeat right center;*/}
+
 
 ul.details {border: 1px solid #ccc; float: left; background: #fafafa; width: 436px;}
-ul.details ol {float: left; padding: 10px; margin: 0; border-right: 1px dashed #ccc; min-height: 53px;}
+ul.details ol {float: left; padding: 9px; margin: 0; border-right: 1px dashed #ccc; min-height: 53px;}
 ul.details ol:nth-child(6) {border-right: 0;}
 
 ul.details ol strong {clear: both; display: inline-block; color: #333;}
@@ -795,12 +797,29 @@ ul.details ol.rating strong {background-image: url('../images/pisterating-sprite
 .stars5 {width: 60px;}
 .stars0 {width: 12px;}
 
-ul.details ol.rating {min-width: 50px;}
+ul.details ol.rating {width: 60px; padding: 9px;}
 ul.details ol.rating.beg strong {background-color: #999999;}
 ul.details ol.rating.int strong {background-color: #e82722;}
 ul.details ol.rating.exp strong {background-color: #0053a5;}
 ul.details ol.rating.board strong {background-color: #000000;}
 
+
+.more-information {width: 315px; padding-bottom: 10px;
+
+
+    position:absolute;
+    display:none;
+	box-shadow: 1px 1px 5px #A6A6A6;
+    z-index:1000;
+    background-color:#FFFFFF;
+    color:#010000;
+    border: 1px solid #EEEEEE;
+	padding: 10px;
+	border-radius: 3px;
+	top: -92px;
+}
+.more-information img {float: left; margin-right: 10px;}
+.more-information p {width: 200px; float: left;}
 
 
 /* pisterating-sprite.png */
