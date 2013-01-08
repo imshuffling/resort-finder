@@ -448,6 +448,7 @@ require_once 'include/functions.php';
 
 								echo "	<li class=\"resort-package ".$classes." row\">\n
 											<h3><strong>".$row['resort_name'].",</strong> ".$row['country_name']."</h3>
+											<div class='more-information'><img src='images/105x80.jpg' /></div>
 
 											<ul class='details'>
 												<ol><span>Height</span><strong>".$row['height_m']."</strong></ol>
