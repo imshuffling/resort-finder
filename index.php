@@ -658,8 +658,10 @@ $(document).ready(function () {
 					feedback = "<span> Showing </span> " + numDestinations + " <span>of</span> 146 resorts";
 					break;			
 		}
-		jQuery("#resortCount").html(feedback).fadeIn();
+		//jQuery("#resortCount").hide().html(feedback).prepend("<img src='images/ajax-loader.gif' />").fadeIn("slow");
+		jQuery("#resortCount").hide().html(feedback).fadeIn("slow");
 	}
+	
     </script>
 </body>
 </html>
