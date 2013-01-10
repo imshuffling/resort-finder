@@ -33,7 +33,7 @@ require_once 'include/functions.php';
 	});
 	});	*/
 	
-	jQuery(document).ready(function() {	
+	/*jQuery(document).ready(function() {	
 		$(function() {
 			$("ul.packages-list li h3").hover(function() {
 				$(this).next("div").fadeIn("slow");
@@ -41,7 +41,7 @@ require_once 'include/functions.php';
 				$(this).next("div").fadeOut("slow");
 			});
 		});
-	});
+	});*/
 	
 	/*TO DO TOOLTIPS*/
 	
