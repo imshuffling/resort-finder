@@ -17,7 +17,7 @@ require_once 'include/functions.php';
     		
 	<meta name="expires" content="never" />
   	<meta name="robots" content="no-index,no-follow,noydir,noodp" />
-	<script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/prototype/1/prototype.js'></script>
+	<!-- <script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/prototype/1/prototype.js'></script>-->
 	<script src="js/jquery.1.7.2.min.js"></script>
 	<script src="js/jquery-ui.js"></script>	
 	<script>
@@ -543,6 +543,7 @@ function updateTextArea () {
 
 $(document).ready(function () {
     $('.checkbox').click(updateTextArea);
+	sortDestinations();
     updateTextArea();
 	//console.log($('.checkbox').click(updateTextArea));
 
@@ -614,6 +615,7 @@ $(document).ready(function () {
 		filterQuery = filterQuery.replace(/\s+/g, '');		
 		
 		jQuery("#package-list ul li").hide();
+		//console.log('wtf');
 
 
 		if(checkedBoxes > 0){
@@ -656,7 +658,7 @@ $(document).ready(function () {
 					feedback = "<span> Showing </span> " + numDestinations + " <span>of</span> 146 resorts";
 					break;			
 		}
-		jQuery("#resortCount").html(feedback).fadeIn();
+		jQuery("#resortCount").html(feedback).fadeIn("slow");
 	}
     </script>
 </body>
