@@ -433,8 +433,21 @@ require_once 'include/functions.php';
                     	
                         <div id="clearFilters"><a href="">Reset all filters</a></div>
                     </div>
-					<div id="resortCount"></div>
 					
+					<div id="resortCount"></div>
+					<div class="resortSelect">
+					<span><p>Sort by:</p></span>
+						<select>
+							<option value="resort_name">Resort Name</option>
+							<option value="country">Country</option>
+							<option value="resort_height">Resort Height</option>
+							<option value="snow_range">Snow Range</option>
+							<option value="good_for_beginners">Good for beginners</option>
+							<option value="good_for_intermediates">Good for intermediates</option>
+							<option value="good_for_experts">Good for experts</option>
+							<option value="good_for_boarders">Good for boards</option>
+						</select> 
+					</div>
 					
 	
                 </div>
