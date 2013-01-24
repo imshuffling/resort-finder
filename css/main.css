@@ -213,7 +213,7 @@ h3.heading { font-size: 120%;}
 #offers
 {
 	position: relative;
-	font-size: 80%;
+	font-size: 11px;
 	width: 655px;
 	padding: 30px 5px 0 5px;
 	background: url(../images/offers-top-bg_30.jpg) no-repeat top;
@@ -631,7 +631,7 @@ padding-right: 15px;
 	#display_text_here li:hover {cursor: pointer;}
 
 	
-	#package-list {float: left; width: 655px; /*display: table;*/ font-size: 80%; padding-left: 5px;}
+	#package-list {float: left; width: 655px; /*display: table;*/ /*font-size: 80%;*/ font-size: 11px; padding-left: 5px;}
 #package-list ul li.package {float: left; border-top: 1px solid #ccc; border-bottom: 1px solid #ccc; border-left: 1px solid #ccc; border-right: 1px solid #ccc; margin-bottom: 5px;}
 #package-list ul li.package:hover {background: #f3f3f3; cursor: pointer;}
 
@@ -740,9 +740,9 @@ a.external {text-decoration: underline; /*font-weight: bold;*/
 #where-to-go ul li {padding: 10px 0 10px 0; border-bottom: 1px solid #ccc;}
 #where-to-go ul li:hover {cursor: pointer; background: #fefefe;}
 
-#where-to-go ul li.active p {background-position: 2px -18px;}
+#where-to-go ul li.active p {background-position: 5px -20px;}
 #where-to-go ul li p {
-    background: url("../images/plus.png") no-repeat scroll 2px 2px transparent;
+    background: url("../images/plus.png") no-repeat scroll 5px 0px transparent;
     font-size: 80%;
     line-height: 1.6em;
     padding-left: 30px;
@@ -813,10 +813,10 @@ ul.details ol.rating strong {background-image: url('../images/pisterating-sprite
 .stars0 {width: 12px;}
 
 ul.details ol.rating {width: 60px; padding: 9px;}
-ul.details ol.rating.beg strong {background-color: #999999;}
+ul.details ol.rating.beg strong {background-color: #3F3EBF;}
 ul.details ol.rating.int strong {background-color: #e82722;}
-ul.details ol.rating.exp strong {background-color: #0053a5;}
-ul.details ol.rating.board strong {background-color: #000000;}
+ul.details ol.rating.exp strong {background-color: #000000;}
+ul.details ol.rating.board strong {background-color: #A4A4A4;}
 
 
 .more-information {width: 315px; padding-bottom: 10px;
@@ -838,6 +838,18 @@ ul.details ol.rating.board strong {background-color: #000000;}
 
 
 /* pisterating-sprite.png */
+
+.extras {width: 437px; float: left; padding-top: 5px;}
+
+.extras ol {float: left; background-image: url('../images/accom-image.jpg'); background-repeat: no-repeat; padding: 10px 30px 10px 40px;}
+
+
+.extras ol.ski-in {background-position: 0px 6px;}
+.extras ol.skier-resort {background-position: 0 -35px;}
+
+
+.extras ol a {text-decoration: underline; color: #0166B1;}
+.extras ol a:hover {text-decoration: none;}
 
 
 

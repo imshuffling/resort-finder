@@ -6,7 +6,7 @@ $debug_mode = true;
 $dbHost = 'localhost';
 $dbUser = 'esb';
 $dbPass = 'esb';
-$dbName = 'ski_destinations2';
+$dbName = 'ski_destinations3';
 
 
 

@@ -78,7 +78,7 @@ function getList($logic, $sql, $field, $checkBoxType, $destinations_field="", $c
 function getClasses($resort_name){
 	$classes = "";
 	
-	$sql = "SELECT destination, country_name, ski_area, families, non_ski, nightlife, terrain_parks, crystal_childcare, ski_host, ski_plus, riders_lodge, finest, chalets, up_to_9_people, 10_to_14_people, 15_to_45_people, belfast_aldergrove, belfast_city, birmingham, bournemouth, bristol, doncaster_sheffield, dublin, east_midlands, edinburgh, exeter, glasgow, leeds_bradford, liverpool, london_gatwick, london_heathrow, london_all_airports, london_luton, london_stansted, manchester , newcastle, st_pancras, ashford_international, glaciers, fast_pass, ski_escort 
+	$sql = "SELECT destination, country_name, ski_area, families, non_ski, nightlife, terrain_parks, crystal_childcare, transfer_less_than_2hrs, hotel, hotel_with_apartments, apartments, condos, small_and_friendly_guesthouse, ski_host, ski_plus, riders_lodge, finest, chalets, up_to_9_people, 10_to_14_people, 15_to_45_people, belfast_aldergrove, belfast_city, birmingham, bournemouth, bristol, doncaster_sheffield, dublin, east_midlands, edinburgh, exeter, glasgow, leeds_bradford, liverpool, london_gatwick, london_heathrow, london_all_airports, london_luton, london_stansted, manchester , newcastle, st_pancras, ashford_international, glaciers, fast_pass, ski_escort 
 			FROM destinations
 			WHERE resort_name = '".$resort_name."'";
 	
@@ -96,6 +96,14 @@ function getClasses($resort_name){
 	$nightlife = ($items['nightlife'] == 'TRUE' ? "c_nightlife " : "");
 	$terrainparks = ($items['terrain_parks'] > 0 ? "c_terrainparks " : "");
 	$childcare = ($items['crystal_childcare'] == 'TRUE' ? "c_childcare " : "");
+	$transfer = ($items['transfer_less_than_2hrs'] == 'TRUE' ? "c_transferlessthan2hrs " : "");
+	
+	$hotel = ($items['hotel'] == 'TRUE' ? "c_hotel " : "");
+	$hotelwithapartments = ($items['hotel_with_apartments'] == 'TRUE' ? "c_hotelwithapartments " : "");
+	$apartments = ($items['apartments'] == 'TRUE' ? "c_apartments " : "");
+	$condos = ($items['condos'] == 'TRUE' ? "c_condos " : "");
+	$smallandfriendlyguesthouse = ($items['small_and_friendly_guesthouse'] == 'TRUE' ? "c_hotel " : "");
+	
 	$skihost = ($items['ski_host'] == 'TRUE' ? "c_skihost " : "");
 	$skiplus = ($items['ski_plus'] == 'TRUE' ? "c_skiplus " : "");
 	$riderslodge = ($items['riders_lodge'] == 'TRUE' ? "c_riderslodge " : "");
@@ -141,6 +149,7 @@ function getClasses($resort_name){
 				$nightlife.
 				$terrainparks.
 				$childcare.
+				$transfer.
 				$skihost.
 				$skiplus.
 				$riderslodge.

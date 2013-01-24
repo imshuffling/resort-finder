@@ -188,8 +188,21 @@ require_once 'include/functions.php';
 								</div><!-- .subNav -->					
 							</li>
 							<li class=" hasSubNav">
-								<a href="javascript:;">Accomodation</a>
-								<div class="subNav twoCol">	
+								<a href="javascript:;">Where to stay</a>
+								<div class="subNav twoCol">						
+									<div class="col">
+									<h3>Accomodation type</h3>
+										<ul>
+											<?php
+												$sql = "SELECT house, house_field    
+												FROM housetypes
+												ORDER BY order_id";
+												$house_list = getList("AND", $sql, 'house', 'house', 'house_field');
+												echo $house_list;
+											?>
+										</ul>	
+									</div><!-- .col -->
+									
 									<div class="col">		
 										<h3>Chalet size</h3>	
 										<ul>
@@ -202,19 +215,7 @@ require_once 'include/functions.php';
 											?>
 										</ul>					
 									</div><!-- .col -->
-					
-									<div class="col">
-									<h3>Accomodation type</h3>
-										<ul>
-											<?php
-												$sql = "SELECT accommodation, accommodation_field    
-												FROM accommodationtypes
-												ORDER BY order_id";
-												$accommodation_list = getList("AND", $sql, 'accommodation', 'accommodation', 'accommodation_field');
-												echo $accommodation_list;
-											?>
-										</ul>	
-									</div><!-- .col -->
+									
 								</div><!-- .subNav -->					
 							</li>
 							<li class=" hasSubNav">
@@ -302,8 +303,8 @@ require_once 'include/functions.php';
 									</div><!-- .col -->
 								</div><!-- .subNav -->
 							</li>
-							<li class="right hasSubNav">
-								<a href="javascript:;">Ski Features</a>
+							<li class=" hasSubNav">
+								<a href="javascript:;">Resort Features</a>
 								<div class="subNav">	
 									<div class="col">		
 										<ul>
@@ -479,7 +480,15 @@ require_once 'include/functions.php';
 							while($row = dbFetchArray($result)){
 								$classes = getClasses(mysql_real_escape_string($row['resort_name']));
 								
-								$row['snow_range_m'] = str_replace("-","-<br/>", $row['snow_range_m']);
+								$row['snow_range_m'] = preg_replace('/m/', '', $row['snow_range_m']);
+								$row['snow_range_m'] = str_replace("-","-<br/>", $row['snow_range_m']).'m';
+								
+								/*								
+                                 $sql = "SELECT features, features_field  
+                                            FROM skifeatures
+                                            ORDER BY order_id";
+                                 $features_list = getList("AND", $sql, 'features', 'features', 'features_field');
+								*/		
 
 								echo "	<li class=\"resort-package ".$classes." row\">\n
 											<h3><strong>".$row['resort_name'].",</strong> ".$row['country_name']."</h3>
@@ -491,12 +500,18 @@ require_once 'include/functions.php';
 											<ul class='details'>
 												<ol><span>Height</span><strong>".$row['height_m']."</strong></ol>
 												<ol><span>Range</span><strong>".$row['snow_range_m']."</strong></ol>
-												<ol class='rating beg'><span>Beg</span><strong class='ratings stars".$row['beginners']."'>".$row['beginners']."</strong></ol>
-												<ol class='rating int'><span>Int</span><strong class='ratings stars".$row['intermediate']."'>".$row['intermediate']."</strong></ol>
-												<ol class='rating exp'><span>Exp</span><strong class='ratings stars".$row['advanced']."'>".$row['advanced']."</strong></ol>
-												<ol class='rating board'><span>Board</span><strong class='ratings stars".$row['snowboarders']."'>".$row['snowboarders']."</strong></ol>
+												<ol class='rating beg'><span>Beginners</span><strong class='ratings stars".$row['beginners']."'>".$row['beginners']."</strong></ol>
+												<ol class='rating int'><span>Intermediate</span><strong class='ratings stars".$row['intermediate']."'>".$row['intermediate']."</strong></ol>
+												<ol class='rating exp'><span>Advanced</span><strong class='ratings stars".$row['advanced']."'>".$row['advanced']."</strong></ol>
+												<ol class='rating board'><span>Boarders</span><strong class='ratings stars".$row['snowboarders']."'>".$row['snowboarders']."</strong></ol>
 											</ul>
-											<img src='images/extras.png' />
+											<!-- <img src='images/extras.png' /> -->
+											<ul class='extras'>
+												<ol class='skier-resort'><a href='#'>More on ".$row['resort_name']." ski resort</a></ol>
+												<ol class='ski-in'><a href='#'>Skiing in ".$row['resort_name']."</a></ol>
+											</ul>
+											
+											
 										</li>\n";		
 										
 							}
