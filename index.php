@@ -221,7 +221,11 @@ require_once 'include/functions.php';
 							<li class=" hasSubNav">
 								<a href="javascript:;">Destinations</a>
 								<div class="subNav threeCol">	
-									<div class="col">		
+									<div class="col">	
+
+
+									    <fieldset>
+										 <div><input type="checkbox" value="Europe" class="checkall checkbox"> Europe</div>
 										<ul>
 											<?php
 												$sql = "SELECT location_name   
@@ -231,10 +235,17 @@ require_once 'include/functions.php';
 												$location_list = getList("OR", $sql, 'location_name', 'location', '', 1);
 												echo $location_list;
 											?>
-										</ul>					
+										</ul>	
+                                        </fieldset>
+
+
+										
 									</div><!-- .col -->
 					
 									<div class="col">
+									
+									    <fieldset>
+										<div><input type="checkbox" value="ROW" class="checkall checkbox"> ROW</div>
 										<ul>
 											<?php
 												$sql = "SELECT location_name   
@@ -245,6 +256,7 @@ require_once 'include/functions.php';
 												echo $location_list;
 											?>
 										</ul>	
+										</fieldset>
 									</div><!-- .col -->
 					
 									<div class="col last">
@@ -265,7 +277,11 @@ require_once 'include/functions.php';
 							<li class=" hasSubNav">
 								<a href="javascript:;">Departing from</a>
 								<div class="subNav threeCol">	
-									<div class="col">		
+									<div class="col">	
+
+
+                                        <fieldset>
+										<div><input type="checkbox" value="London and The South" class="checkall checkbox"> London and The South</div>										  
 										<ul>
 										<?php
 											$sql = "SELECT depart_from, depart_field   
@@ -275,9 +291,12 @@ require_once 'include/functions.php';
 											$departure_list = getList("AND", $sql, 'depart_from', 'departures', '', 1);
 											echo $departure_list;
 										?>
-										</ul>					
+										</ul>
+                                        </fieldset>										
 									</div><!-- .col -->
-									<div class="col">		
+									<div class="col">	
+                                        <fieldset>
+										<div><input type="checkbox" value="Wales and Midlands" class="checkall checkbox"> Wales and Midlands</div>									
 										<ul>
 										<?php
 											$sql = "SELECT depart_from, depart_field   
@@ -287,9 +306,12 @@ require_once 'include/functions.php';
 											$departure_list = getList("AND", $sql, 'depart_from', 'departures', '', 2);
 											echo $departure_list;
 										?>
-										</ul>					
+										</ul>	
+										</fieldset>
 									</div><!-- .col -->
-									<div class="col">		
+									<div class="col">
+										<fieldset>
+										<div><input type="checkbox" value="Scotland and Northern Ireland" class="checkall checkbox"> Scotland and Northern Ireland</div>
 										<ul>
 										<?php
 											$sql = "SELECT depart_from, depart_field   
@@ -300,6 +322,7 @@ require_once 'include/functions.php';
 											echo $departure_list;
 										?>
 										</ul>					
+										</fieldset>
 									</div><!-- .col -->
 								</div><!-- .subNav -->
 							</li>
@@ -531,7 +554,7 @@ require_once 'include/functions.php';
     
     <script>
     jQuery(document).ready(function (){
-		
+			
 		jQuery("#clearFilters a").click(function(e){
 			e.preventDefault();
 			jQuery("input").attr('checked', false);
@@ -552,21 +575,25 @@ require_once 'include/functions.php';
             e.preventDefault();
 			sortDestinations();	
         });
+		
+		$('.checkall').click(function () {
+        $(this).parents('fieldset:eq(0)').find(':checkbox').attr('checked', this.checked);
+        });
 
 function updateTextArea () {
     var allVals = [],
         toDisplay = '';
+			
 		
     $('#display_text_here').empty();
 		$('#:checked').each(function () {
             
 			toDisplay = $(this).val();
             allVals.push(toDisplay);
-        
+			       
             var li = $('<li></li>').text(toDisplay);
             $('#display_text_here').append(li);
         });	
-
 }
 
 $(document).ready(function () {
@@ -574,9 +601,17 @@ $(document).ready(function () {
 	sortDestinations();
     updateTextArea();
 	//console.log($('.checkbox').click(updateTextArea));
+	
+});
+
+	/*$(function () {
+    $('.checkall').click(function () {
+        $(this).parents('fieldset:eq(0)').find(':checkbox').attr('checked', this.checked);
+        });
+    });*/
+
 
 });
-    });
 	
 	/*(function() {
 	    $('input').click(function()  {

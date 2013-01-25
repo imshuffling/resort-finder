@@ -772,7 +772,7 @@ h3.heading {
 
 
 
-.subNav.threeCol .col li.Europe, .subNav.threeCol .col li.ROW {border-bottom: 1px solid #ccc !important; padding-bottom: 10px !important;}
+/*.subNav.threeCol .col li.Europe, .subNav.threeCol .col li.ROW {border-bottom: 1px solid #ccc !important; padding-bottom: 10px !important;}*/
 .subNav.threeCol .col {border-right: 1px solid #ccc !important; width: 149px !important;}
 .subNav.threeCol .col:nth-child(3) {border-right: 0 none !important;}
 
@@ -798,8 +798,8 @@ ul.details ol:nth-child(6) {border-right: 0;}
 ul.details ol strong {clear: both; display: inline-block; color: #333;}
 ul.details ol span {display: block; clear: both; padding-bottom: 5px;}
 
-
-
+fieldset div {border-bottom: 1px solid #ccc !important; padding-bottom: 10px !important; margin-bottom: 10px !important;}
+fieldset {border: none; padding: 0; margin: 0;}
 
 /*ra tingsss*/
 
