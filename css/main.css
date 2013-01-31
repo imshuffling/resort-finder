@@ -784,15 +784,15 @@ h3.heading {
 
 
 ul.packages-list {/*margin-top: 10px;*/}
-li.resort-package {border: 1px solid #ccc; margin-bottom: 10px; padding: 15px; min-height: 130px; clear: both; background: url('../images/special-offers.png') no-repeat right center; position: relative;}
+li.resort-package {border: 1px solid #ccc; margin-bottom: 10px; padding: 15px; min-height: 140px; clear: both; background: url('../images/special-offers.png') no-repeat right center; position: relative;}
 
 li.resort-package h3 strong {font-size: 120%; color: #333; }
 li.resort-package h3:hover {cursor: pointer;}
 li.resort-package h3 {margin-bottom: 10px; /*background: url("../images/information-icon.png") no-repeat right center;*/}
 
 
-ul.details {border: 1px solid #ccc; float: left; background: #fafafa; width: 436px;}
-ul.details ol {float: left; padding: 9px; margin: 0; border-right: 1px dashed #ccc; min-height: 53px;}
+ul.details {border-left: 1px solid #ccc; border-right: 1px solid #ccc; border-bottom: 1px solid #ccc; border-top: 1px dashed #ccc; float: left; background: #fafafa; width: 436px;}
+ul.details ol {float: left; padding: 9px; margin: 0; border-right: 1px dashed #ccc; min-height: 40px;}
 ul.details ol:nth-child(6) {border-right: 0;}
 
 ul.details ol strong {clear: both; display: inline-block; color: #333;}
@@ -852,7 +852,32 @@ ul.details ol.rating.board strong {background-color: #A4A4A4;}
 .extras ol a:hover {text-decoration: none;}
 
 
+/*DEVELOPMENT 8*/
 
+.header-wrapper {
+
+    background: none repeat scroll 0 0 #FAFAFA;
+    border-left: 1px solid #CCCCCC;
+    border-right: 1px solid #CCCCCC;
+    border-top: 1px solid #CCCCCC;
+    width: 436px;
+
+
+
+}
+
+.height-text {
+
+    border-right: 1px dashed #CCCCCC;
+    padding: 4px 9px;
+
+
+}
+
+.range-text {    border-right: 1px dashed #CCCCCC; padding: 4px 13px;}
+.good-for-text {    padding: 4px 10px;
+    text-align: center;
+    width: 308px;}
 
 
 

@@ -520,13 +520,43 @@ require_once 'include/functions.php';
 												<p>Austria is one of blah's most picturesque villages - a true winter wonderland. More Details</p>
 											</div>
 
+											
+											
+											<div class='header-wrapper'>
+											
+												<div class='height-text'>Height</div>
+												<div class='range-text'>Range</div>
+												<div class='good-for-text'>".$row['resort_name']." is good for:</div>
+											
+											</div>
+											
+											
+											
+											
+											
+											
 											<ul class='details'>
-												<ol><span>Height</span><strong>".$row['height_m']."</strong></ol>
-												<ol><span>Range</span><strong>".$row['snow_range_m']."</strong></ol>
-												<ol class='rating beg'><span>Beginners</span><strong class='ratings stars".$row['beginners']."'>".$row['beginners']."</strong></ol>
-												<ol class='rating int'><span>Intermediate</span><strong class='ratings stars".$row['intermediate']."'>".$row['intermediate']."</strong></ol>
-												<ol class='rating exp'><span>Advanced</span><strong class='ratings stars".$row['advanced']."'>".$row['advanced']."</strong></ol>
-												<ol class='rating board'><span>Boarders</span><strong class='ratings stars".$row['snowboarders']."'>".$row['snowboarders']."</strong></ol>
+											
+											
+											
+											
+											
+											
+											
+											
+											
+											
+											
+											
+												<ol><strong>".$row['height_m']."</strong></ol>
+												<ol><strong>".$row['snow_range_m']."</strong></ol>
+												
+												<ul>
+													<ol class='rating beg'><span>Beginners</span><strong class='ratings stars".$row['beginners']."'>".$row['beginners']."</strong></ol>
+													<ol class='rating int'><span>Intermediate</span><strong class='ratings stars".$row['intermediate']."'>".$row['intermediate']."</strong></ol>
+													<ol class='rating exp'><span>Advanced</span><strong class='ratings stars".$row['advanced']."'>".$row['advanced']."</strong></ol>
+													<ol class='rating board'><span>Boarders</span><strong class='ratings stars".$row['snowboarders']."'>".$row['snowboarders']."</strong></ol>
+												</ul>
 											</ul>
 											<!-- <img src='images/extras.png' /> -->
 											<ul class='extras'>
