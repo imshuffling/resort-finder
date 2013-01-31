@@ -803,14 +803,14 @@ fieldset {border: none; padding: 0; margin: 0;}
 
 /*ra tingsss*/
 
-ul.details ol.rating strong {background-image: url('../images/pisterating-sprite.png'); text-indent: -9999px; background-repeat: no-repeat; height: 10px;}
+.ratings {background-image: url('../images/pisterating-sprite.png'); text-indent: -9999px; background-repeat: no-repeat; height: 10px; margin-top: 5px; margin-bottom: 5px;}
 
-.stars1 {width: 12px;}
-.stars2 {width: 24px;}
-.stars3 {width: 36px;}
-.stars4 {width: 48px;}
-.stars5 {width: 60px;}
-.stars0 {width: 12px;}
+.stars1 {width: 12px; display: block;}
+.stars2 {width: 24px; display: block;}
+.stars3 {width: 36px; display: block;}
+.stars4 {width: 48px; display: block;}
+.stars5 {width: 60px; display: block;}
+.stars0 {width: 12px; display: block;}
 
 ul.details ol.rating {width: 60px; padding: 9px;}
 ul.details ol.rating.beg strong {background-color: #3F3EBF;}
@@ -818,6 +818,11 @@ ul.details ol.rating.int strong {background-color: #e82722;}
 ul.details ol.rating.exp strong {background-color: #000000;}
 ul.details ol.rating.board strong {background-color: #A4A4A4;}
 
+
+.beginners {background-color: #3F3EBF;}
+.intermediate {background-color: #e82722;}
+.advanced  {background-color: #000000;}
+.boarders {background-color: #A4A4A4;}
 
 .more-information {width: 315px; padding-bottom: 10px;
 
@@ -853,6 +858,9 @@ ul.details ol.rating.board strong {background-color: #A4A4A4;}
 
 
 
+li.resort-package tr.row-first td {border-bottom: 1px dashed #9A9A9A;}
+li.resort-package tr td {border-right: 1px dashed #9A9A9A;}
+li.resort-package tr td.last {border-right: none;}
 
 
 

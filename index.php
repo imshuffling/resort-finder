@@ -503,6 +503,7 @@ require_once 'include/functions.php';
 							while($row = dbFetchArray($result)){
 								$classes = getClasses(mysql_real_escape_string($row['resort_name']));
 								
+								$row['height_m'] = $row['height_m'].'m';
 								$row['snow_range_m'] = preg_replace('/m/', '', $row['snow_range_m']);
 								$row['snow_range_m'] = str_replace("-","-<br/>", $row['snow_range_m']).'m';
 								
@@ -518,16 +519,26 @@ require_once 'include/functions.php';
 											<div class='more-information'>
 												<img src='images/105x80.jpg' />
 												<p>Austria is one of blah's most picturesque villages - a true winter wonderland. More Details</p>
-											</div>
+											</div>							
+											
+											
+											<table border='0' bordercolor='#959595' style='background-color:#FAFAFA; float:left; text-align:center;border: 1px solid #9A9A9A;' width='436' cellpadding='5' cellspacing='1'>
+											<tr class='row-first'>
+												<td><strong>Height</strong></td>
+												<td><strong>Range</strong></td>
+												<td class='last' colspan='4'><strong>".$row['resort_name']." is good for:</strong></td>
+											</tr>
+											<tr class='row-second'>
+												<td>".$row['height_m']."</td>
+												<td>".$row['snow_range_m']."</td>
+												<td><span>Beginners</span><strong class='beginners ratings stars".$row['beginners']."'>".$row['beginners']."</strong></td>
+												<td><span>Intermediate</span><strong class='intermediate ratings stars".$row['intermediate']."'>".$row['intermediate']."</strong></td>
+												<td><span>Advanced</span><strong class='advanced ratings stars".$row['advanced']."'>".$row['advanced']."</strong></td>
+												<td class='last'><span>Boarders</span><strong class='boarders ratings stars".$row['snowboarders']."'>".$row['snowboarders']."</strong></td>
+											</tr>
+											</table>
 
-											<ul class='details'>
-												<ol><span>Height</span><strong>".$row['height_m']."</strong></ol>
-												<ol><span>Range</span><strong>".$row['snow_range_m']."</strong></ol>
-												<ol class='rating beg'><span>Beginners</span><strong class='ratings stars".$row['beginners']."'>".$row['beginners']."</strong></ol>
-												<ol class='rating int'><span>Intermediate</span><strong class='ratings stars".$row['intermediate']."'>".$row['intermediate']."</strong></ol>
-												<ol class='rating exp'><span>Advanced</span><strong class='ratings stars".$row['advanced']."'>".$row['advanced']."</strong></ol>
-												<ol class='rating board'><span>Boarders</span><strong class='ratings stars".$row['snowboarders']."'>".$row['snowboarders']."</strong></ol>
-											</ul>
+											
 											<!-- <img src='images/extras.png' /> -->
 											<ul class='extras'>
 												<ol class='skier-resort'><a href='#'>More on ".$row['resort_name']." ski resort</a></ol>
